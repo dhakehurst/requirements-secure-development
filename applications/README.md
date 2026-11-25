@@ -202,15 +202,3 @@ software development; they do not replace the organisation's own policies.
 | Short name | Source |
 |------------|--------|
 | IEC 61508-3 | Functional safety, software requirements; 7.4.4 covers support tools; the tool classes T1 to T3 are defined in IEC 61508-4. Sector safety standards use the same concepts; they are not cited, see section 5 |
-
-## 9. Changes
-
-| Version | Date | Change |
-|---------|------|--------|
-| 0.1 | 2026-11-25 | First draft, one document |
-| 0.2 | 2026-11-25 | Split into documents; rules for publishing compliance in public repositories (section 5); only general standards cited, no sector-specific ones; minimum profile for libraries; DEP-12 upstream dependencies; added quality, tool qualification support, Kotlin Multiplatform annex and adoption guide; development by code agents made part of the core and the working model; more sources (IEC 62443-4-1, BSI TR-03185, BSI CON.8, ISO/IEC 27034, ISO/IEC 27701, GDPR, AI management and risk standards) |
-| 0.3 | 2026-11-25 | Review fixes: pre-releases (BLD-13); review recorded as a required check (SRC-12); repository backup (SRC-13); developer computers (SRC-14); agent extensions (AGT-19); owner samples agent reviews (AGT-20); person review of security changes (CHG-02); VUL-04 critical limit is now a mitigation or advisory in 7 days and a fix in 30; self-study allowed for training (GOV-06); who approves dependencies (DEP-03); QPL-02 and QCM-01 are SHOULD unless document 07 applies; quarantined tests need a person's approval (QCR-04); TST-04, CHG-01, AGT-02, QDO-04 and QRI-06 retired (merged into others); references updated (ISO 9001:2026, OWASP Top 10:2025, SLSA 1.2, RFC 8174, EU CRA dates and support period); solo-maintainer profile for applications (document 05); ASVS chapters for desktop applications (APP-01); the set for libraries is now reduced to its minimum requirements (library set version 0.4), and an application's own libraries follow that set |
-| 0.4 | 2026-11-25 | The solo-maintainer profile is now the one-person profile, open to every application whatever the number of people who take part, so that one person working with code agents is always enough |
-| 0.5 | 2026-11-25 | No response or fix time limits for voluntarily maintained applications: VUL-04 is a SHOULD (a MUST with commercial support), VUL-02 has a time limit only with commercial support, and new VUL-10 asks for a "best effort" statement; the one-person profile has VUL-10 instead of VUL-04 |
-
-

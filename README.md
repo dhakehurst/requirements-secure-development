@@ -39,8 +39,9 @@ own; a repository follows one set.
    record, not a copy of the requirements. Follow the set's adoption guide for an existing
    repository, and its rules for what a public checklist may show.
 
-To move to a new version: change the reference, check the checklist against the changes listed in
-the new version, and merge the update as a reviewed change.
+To move to a new version: change the reference, check the checklist against the changes in the new
+version (the release notes of its tag, or the commits since the old tag), and merge the update as a
+reviewed change.
 
 ## Versions
 
@@ -48,8 +49,7 @@ the new version, and merge the update as a reviewed change.
 - Tags are never moved or deleted, and history is never rewritten, so that every version a
   repository has referred to can always be read.
 - Versions below 1.0 are drafts.
-- Each set's README lists the changes of every version; [CHANGELOG.md](CHANGELOG.md) lists the
-  releases.
+- The changes in each version are in the release notes of its tag and in the commit history.
 
 ## Licence
 
