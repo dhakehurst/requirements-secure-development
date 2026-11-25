@@ -51,6 +51,12 @@ version (the commits since the old commit), and merge the update as a reviewed c
 - History is never rewritten, so that every commit a repository has referred to can always be read.
   The changes are in the commit history.
 
+## Reviewing and Changing the Sets
+
+[MAINTAINING.md](MAINTAINING.md) lists the sources with links and the date they were last checked,
+the decisions behind the sets with their reasons, the editing rules and the sources to watch.
+Changes are proposed as merge requests and must pass `tools/check.py`.
+
 ## Licence
 
 The text is licensed under [CC BY 4.0](LICENSE): it may be used and adapted, with credit.

@@ -1,0 +1,25 @@
+# Consistency check of the requirement sets (tools/check.py).
+# Uses no third-party actions: the commit is fetched with git, and the runner's own Python runs
+# the check. The token has read access only.
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fetch the commit
+        run: |
+          git init -q .
+          git fetch -q --depth 1 "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" "$GITHUB_SHA"
+          git checkout -q FETCH_HEAD
+      - name: Check ids, checklists, versions and line length
+        run: python3 tools/check.py
