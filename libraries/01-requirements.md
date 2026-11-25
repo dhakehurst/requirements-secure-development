@@ -1,14 +1,14 @@
 # 01 Requirements for Libraries
 
-Part of the Secure Development Requirements for Libraries, version 0.4 (draft), 2026-11-25. Read the
+Part of the Secure Development Requirements for Libraries, version 0.5 (draft), 2026-11-25. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Scope
 
 Applies to every repository in this set: it publishes a library, package, plug-in or other component
-that other software builds on, and it is maintained voluntarily by one or two people. These are all
-the requirements of the set. Document 02 gives code agents detailed guidance on how to do the work
-well; it is not a checklist.
+that other software builds on, and it is maintained voluntarily (however many volunteers take part).
+These are all the requirements of the set. Document 02 gives code agents detailed guidance on how to
+do the work well; it is not a checklist.
 
 Each requirement says **who** does it: the **person** (the owner), an **agent**, or **CI**
 (automated checks that agents set up and that then run by themselves). Most of the person's part is

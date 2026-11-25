@@ -1,6 +1,6 @@
 # Secure Development Requirements for Libraries
 
-Version 0.4 (draft), 2026-11-25
+Version 0.5 (draft), 2026-11-25
 
 ## 1. Purpose
 
@@ -10,8 +10,8 @@ for the person who maintains it. It is generic: it applies to any library reposi
 product or the organisation.
 
 It is for repositories that publish a library, package, plug-in or other component that other
-software builds on, and that are maintained voluntarily by one or two people, with most of the work
-done by code agents. Applications use the separate set for applications.
+software builds on, and that are maintained voluntarily, however many people take part, with most of
+the work done by code agents. Applications use the separate set for applications.
 
 The set has two kinds of content:
 
@@ -34,9 +34,8 @@ use.
 | [Adoption guide](adoption-guide.md) | how to bring a repository into line, and the person's steps | (none) |
 
 The ids are the same as in the set for applications, so that a requirement means the same in both.
-Where a library is ever supported commercially, or is maintained by more than two people, it applies
-instead the core, agent and quality documents (01 to 03) of the set for applications, with these
-documents.
+Where support for a library is ever offered commercially, it applies instead the core, agent and
+quality documents (01 to 03) of the set for applications, with these documents.
 
 Third-party dependencies, including the language runtime and its standard library, are not required
 to meet these requirements: they are checked when added (DEP-03) and scanned (DEP-05).
@@ -129,3 +128,4 @@ controls for software development; they do not replace an organisation's own pol
 | 0.2 | 2026-11-25 | Split into documents; public repository rules; minimum profile for libraries |
 | 0.3 | 2026-11-25 | Review fixes (see the set for applications); minimum profile 31 requirements; no response or fix time limits for voluntarily maintained libraries (LIB-11) |
 | 0.4 | 2026-11-25 | The set is reduced to the minimum profile: document 01 holds all 31 requirements, all MUST, each saying who does it, with a list of the person's part. The rest of the former documents 01 to 04 and 06 became guidance for code agents (document 02), with no checklist. Deterministic results, clear errors, version reporting and marking results that come from a language model are in the guidance. Annex A1 split into practices for the requirements and guidance; no separate checklist |
+| 0.5 | 2026-11-25 | The set applies to every voluntarily maintained library, whatever the number of maintainers; only commercial support moves a library to the fuller requirements |
