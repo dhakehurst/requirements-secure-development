@@ -25,8 +25,8 @@ apply as listed in the README.
   62443-4-1 SM; BSI CON.8.
 - **GOV-03 (MUST) Applicable documents recorded.** The repository records which of these documents
   apply to it (README, section 2), and which version of them it follows. The set is referenced, not
-  copied: the record names this set's central repository, the version tag and the commit hash of
-  that tag (README, "Using This Set"). *Evidence:* the reference in the repository's README or
+  copied: the record names this set's central repository, the version and the full commit
+  hash (README, "Using This Set"). *Evidence:* the reference in the repository's README or
   `SECURITY.md`, and the filled-in checklists of those documents in the repository. *Sources:* ISO
   27001 A.8.25, A.5.37.
 - **GOV-04 (MUST) Checklist reviewed yearly and before major releases.** The checklist is reviewed

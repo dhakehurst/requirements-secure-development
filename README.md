@@ -22,13 +22,13 @@ own; a repository follows one set.
 
 1. Choose the set that fits the repository.
 2. Add a reference to the repository's README (or `SECURITY.md`). It names the set, its version
-   tag and the commit hash of that tag, so that the text cannot change under the reference:
+   and its full commit hash, so that the text cannot change under the reference:
 
    ```markdown
    ## Secure Development Requirements
 
    This repository follows the Secure Development Requirements for <Libraries | Applications>,
-   version <x.y>: <URL of this repository>/tree/<set>-v<x.y> (commit <full commit hash>).
+   version <x.y>: <URL of this repository>/tree/<full commit hash>.
    Compliance checklist: [docs/security/compliance-checklist.md](docs/security/compliance-checklist.md)
    ```
 
@@ -40,16 +40,16 @@ own; a repository follows one set.
    repository, and its rules for what a public checklist may show.
 
 To move to a new version: change the reference, check the checklist against the changes in the new
-version (the release notes of its tag, or the commits since the old tag), and merge the update as a
-reviewed change.
+version (the commits since the old commit), and merge the update as a reviewed change.
 
 ## Versions
 
-- Each set has its own version, released as a tag `libraries-v<x.y>` or `applications-v<x.y>`.
-- Tags are never moved or deleted, and history is never rewritten, so that every version a
-  repository has referred to can always be read.
-- Versions below 1.0 are drafts.
-- The changes in each version are in the release notes of its tag and in the commit history.
+- Each set has its own version, given at the top of its README.
+- Versions below 1.0 are drafts. A repository refers to a draft by its full commit hash only.
+- From version 1.0, each version is also released as a tag `libraries-v<x.y>` or
+  `applications-v<x.y>`, with its changes in the release notes. Tags are never moved or deleted.
+- History is never rewritten, so that every commit a repository has referred to can always be read.
+  The changes are in the commit history.
 
 ## Licence
 

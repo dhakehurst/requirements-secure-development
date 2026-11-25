@@ -27,10 +27,10 @@ done once per repository; the section "The Person's Part" lists all of it.
   62443-4-1 SM.
 - **GOV-03 (MUST) Set and version recorded.** The repository records that it follows this set, and
   which version of it. The set is referenced, not copied: the record names this set's central
-  repository, the version tag and the commit hash of that tag (README, "Using This Set"). *Who:*
-  agent, once and when the set changes. *Evidence:* the reference in the repository's README or
-  `SECURITY.md`, and the filled-in checklist of this document in the repository. *Sources:* ISO
-  27001 A.8.25, A.5.37.
+  repository, the version and the full commit hash (README, "Using This Set"). *Who:* agent, once
+  and when the set changes. *Evidence:* the reference in the repository's README or `SECURITY.md`,
+  and the filled-in checklist of this document in the repository. *Sources:* ISO 27001 A.8.25,
+  A.5.37.
 - **GOV-09 (MUST) Public compliance record.** In a public repository, the filled-in checklist is
   published, so that compliance can be shown. It gives the status of each requirement and links to
   public evidence only. It MUST NOT contain: details of weaknesses that are not yet fixed (what is
