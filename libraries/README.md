@@ -1,6 +1,6 @@
 # Secure Development Requirements for Libraries
 
-Version 0.6 (draft), 2026-11-25
+Version 0.7 (draft), 2026-11-25
 
 ## 1. Purpose
 
@@ -170,3 +170,4 @@ text (GOV-10) have no OSPS control.
 | 0.4 | 2026-11-25 | The set is reduced to the minimum profile: document 01 holds all 31 requirements, all MUST, each saying who does it, with a list of the person's part. The rest of the former documents 01 to 04 and 06 became guidance for code agents (document 02), with no checklist. Deterministic results, clear errors, version reporting and marking results that come from a language model are in the guidance. Annex A1 split into practices for the requirements and guidance; no separate checklist |
 | 0.5 | 2026-11-25 | The set applies to every voluntarily maintained library, whatever the number of maintainers; only commercial support moves a library to the fuller requirements |
 | 0.6 | 2026-11-25 | Meets OSPS Baseline 2026.08.28 Level 1 (section 8): new requirements LIB-12 to LIB-17 (public repository, user guide, defect reporting, contribution statement, no binaries, repositories listed); SRC-02, DEP-02, DEP-08, BLD-04 and LIB-01 extended; OSPS control ids on each requirement |
+| 0.7 | 2026-11-25 | No yearly access review (SRC-02): access is set when someone joins or leaves the work |

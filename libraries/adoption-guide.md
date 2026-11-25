@@ -1,6 +1,6 @@
 # Adoption Guide for Library Repositories
 
-Part of the Secure Development Requirements for Libraries, version 0.6 (draft), 2026-11-25. Read the
+Part of the Secure Development Requirements for Libraries, version 0.7 (draft), 2026-11-25. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Purpose
@@ -87,8 +87,8 @@ private record.
 The person's ongoing part is listed in document 01, "The Person's Part": approve new runtime
 dependencies and changes to CI, publishing or agent configuration; start releases; handle
 vulnerability reports on a best-effort basis and publish advisories; approve quarantined tests;
-review access once a year; and keep the issue tracker turned on. Everything else is done by agents
-and CI.
+set access when someone joins or leaves; and keep the issue tracker turned on. Everything else is
+done by agents and CI.
 
 ## Private Repositories and Hosting Plans
 

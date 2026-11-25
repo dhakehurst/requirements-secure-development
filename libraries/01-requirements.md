@@ -1,6 +1,6 @@
 # 01 Requirements for Libraries
 
-Part of the Secure Development Requirements for Libraries, version 0.6 (draft), 2026-11-25. Read the
+Part of the Secure Development Requirements for Libraries, version 0.7 (draft), 2026-11-25. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Scope
@@ -52,9 +52,9 @@ done once per repository; the section "The Person's Part" lists all of it.
 
 - **SRC-02 (MUST) Least-privilege repository access.** New collaborators get no rights, or the
   lowest rights, until rights are assigned by hand. Write access only for people who need it, admin
-  access for as few people as possible, and access removed when someone leaves the work. Access
-  rights are reviewed at least once a year. *Who:* person, once a year (a few minutes). *Evidence:*
-  date of the last review in the checklist. *OSPS Level 1:* OSPS-AC-02.01. *Sources:* ISO 27001
+  access for as few people as possible, and access removed when someone leaves the work. Access is
+  checked when someone is given it or leaves the work; no periodic review is needed. *Who:* person,
+  only when access changes. *Evidence:* the platform's access settings. *OSPS Level 1:* OSPS-AC-02.01. *Sources:* ISO 27001
   A.5.15, A.5.18, A.8.2, A.8.4; OSPS Baseline (Access Control).
 - **SRC-03 (MUST) Multi-factor authentication.** Every account with write access to the repository,
   the CI system or a package registry uses multi-factor authentication. *Who:* person, once.
@@ -287,7 +287,8 @@ Everything else is done by agents or runs in CI. The adoption guide gives the st
   drafted (VUL-05, VUL-09).
 - Approve quarantining a test that fails at random (TST-01).
 
-**Once a year:** review who has access (SRC-02).
+**When access changes:** give the lowest rights needed, and remove them when someone leaves
+(SRC-02).
 
 ## Checklist
 
