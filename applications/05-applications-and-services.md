@@ -1,21 +1,23 @@
 # 05 Applications and Services
 
-Part of the Secure Development Requirements for Applications, version 0.3 (draft), 2026-11-25. Read
+Part of the Secure Development Requirements for Applications, version 0.4 (draft), 2026-11-25. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
 ## Scope
 
 Applies, with documents 01 to 03, to every repository in this set: it delivers software that people
-run: a desktop or mobile application, a command-line tool, a server or a web service. An application
-maintained by one person MAY follow the solo-maintainer profile below.
+run: a desktop or mobile application, a command-line tool, a server or a web service. Any
+application MAY follow the one-person profile below.
 
-## Solo-Maintainer Profile
+## One-Person Profile
 
-An application maintained by one person MAY follow the solo-maintainer profile instead of all of
-documents 01 to 03, 05, 06 and 07. Under this profile, the requirements listed below stay as they
-are, and every other MUST of those documents counts as SHOULD. The choice is recorded (GOV-03).
-Requirements of documents 06 and 07 in the list apply only where those documents apply.
+Any application MAY follow the one-person profile, whatever the number of people who take part, so
+that one person working with code agents is always enough to meet the requirements, and nothing more
+is asked of volunteers. It is used instead of all of documents 01 to 03, 05, 06 and 07. Under this
+profile, the requirements listed below stay as they are, and every other MUST of those documents
+counts as SHOULD. The choice is recorded (GOV-03). Requirements of documents 06 and 07 in the list
+apply only where those documents apply.
 
 The profile keeps what protects users and the repository most: control of the repository and of
 releases, review of every change and person review of security changes, no secrets, the main secure
@@ -25,8 +27,7 @@ for software that uses language models. Requirements that need a second person, 
 large ongoing documentation effort are SHOULD under this profile; in particular code signing of
 installers (APP-08, KMP-22) is a SHOULD, because it needs paid certificates.
 
-A SHOULD that is not met needs a short recorded reason (README, section 3). Where the work grows
-beyond one person, the full set applies again from the next major release.
+A SHOULD that is not met needs a short recorded reason (README, section 3).
 
 | Id | Level | Requirement | Document | Status | Evidence or reason |
 |----|-------|-------------|----------|--------|--------------------|

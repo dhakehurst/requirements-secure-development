@@ -1,6 +1,6 @@
 # A1 Kotlin Multiplatform and Gradle Annex
 
-Part of the Secure Development Requirements for Applications, version 0.3 (draft), 2026-11-25. Read
+Part of the Secure Development Requirements for Applications, version 0.4 (draft), 2026-11-25. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
@@ -11,8 +11,8 @@ built with Gradle. It adds no new requirements, but some entries are stricter th
 they implement, and say so. It says how the requirements of the other documents are met in such a
 repository, so that every repository does it the same way. Each entry names the requirement it
 implements. Where an entry here is not followed, the requirement still applies and has to be met
-another way. Under a profile that turns a MUST into a SHOULD (the solo-maintainer profile), an entry
-here has the level of the requirement it implements. KMP-21 is used only in the set for libraries.
+another way. Under a profile that turns a MUST into a SHOULD (the one-person profile), an entry here
+has the level of the requirement it implements. KMP-21 is used only in the set for libraries.
 
 Tool and plug-in names are given as examples of what is in common use. Use the current maintained
 version, and check that a named option still exists in that version before relying on it.

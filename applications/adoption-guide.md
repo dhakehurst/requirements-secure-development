@@ -1,6 +1,6 @@
 # Adoption Guide for Existing Repositories
 
-Part of the Secure Development Requirements for Applications, version 0.3 (draft), 2026-11-25. Read
+Part of the Secure Development Requirements for Applications, version 0.4 (draft), 2026-11-25. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
@@ -15,8 +15,8 @@ New repositories start at stage 4: they meet the requirements from the first com
 
 ## Stage 1: Gap Assessment
 
-1. Decide which documents apply (README, section 2), and whether a profile is used (the
-   solo-maintainer profile), and record it (GOV-03).
+1. Decide which documents apply (README, section 2), and whether a profile is used (the one-person
+   profile), and record it (GOV-03).
 2. Copy the checklists of those documents into the repository (for example
    `docs/security/compliance-checklist.md`).
 3. Fill in each line from what can be seen in the repository: build files, CI configuration, scan

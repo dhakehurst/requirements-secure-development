@@ -1,6 +1,6 @@
 # Secure Development Requirements for Applications
 
-Version 0.3 (draft), 2026-11-25
+Version 0.4 (draft), 2026-11-25
 
 ## 1. Purpose
 
@@ -25,7 +25,7 @@ process, so some requirements are about the software itself.
 | [01 Core secure development](01-core-secure-development.md) | always | GOV, DES, SRC, COD, DEP, BLD, TST, CHG, VUL, PRD |
 | [02 Development by AI code agents](02-ai-code-agents.md) | always (development is done mainly by code agents) | AGT |
 | [03 Quality](03-quality.md) | always | QPL, QCM, QCR, QDO, QRI |
-| [05 Applications and services](05-applications-and-services.md) | always (includes the solo-maintainer profile) | APP |
+| [05 Applications and services](05-applications-and-services.md) | always (includes the one-person profile) | APP |
 | [06 Software that uses LLMs](06-llm-software.md) | the software sends data to a language model, uses retrieval, or lets a model call tools | AI |
 | [07 Tool qualification support](07-tool-qualification-support.md) | the application may be used to develop or verify safety-related systems | TQS |
 | [A1 Kotlin Multiplatform annex](A1-kotlin-multiplatform-annex.md) | the repository uses Kotlin Multiplatform and Gradle | KMP |
@@ -33,8 +33,9 @@ process, so some requirements are about the software itself.
 
 An application's own libraries (maintained by the same owner) follow the set for libraries.
 Third-party dependencies, including the language runtime and its standard library, are assessed and
-monitored but are not required to meet these requirements (DEP-12). An application maintained by one
-person MAY follow the **solo-maintainer profile** in document 05 instead of the full set.
+monitored but are not required to meet these requirements (DEP-12). Any application MAY follow the
+**one-person profile** in document 05 instead of the full set, so that one person working with code
+agents is always enough.
 
 Each requirements document ends with its own checklist. A repository copies the checklists of the
 documents that apply to it into one file and fills them in (GOV-03).
@@ -73,9 +74,10 @@ Development is assumed to be done mainly by code agents, directed by people:
 
 Where these documents ask for a "review", a review by a separate agent session meets it, provided
 the review and its result are recorded. Where they ask for a "person", an agent does not meet it.
-Where they ask for a "second person" and only one person works on the repository: for a MUST, the
-owner records an exception (GOV-05) and reviews the change themselves at a later time, separate from
-the change, with a recorded result; for a SHOULD, a short recorded reason is enough.
+Where they ask for a "second person" and only one person works on the repository, or the one-person
+profile is used: for a MUST, the owner records an exception (GOV-05) and reviews the change
+themselves at a later time, separate from the change, with a recorded result; for a SHOULD, a short
+recorded reason is enough.
 
 ## 5. Public Repositories
 
@@ -208,5 +210,6 @@ software development; they do not replace the organisation's own policies.
 | 0.1 | 2026-11-25 | First draft, one document |
 | 0.2 | 2026-11-25 | Split into documents; rules for publishing compliance in public repositories (section 5); only general standards cited, no sector-specific ones; minimum profile for libraries; DEP-12 upstream dependencies; added quality, tool qualification support, Kotlin Multiplatform annex and adoption guide; development by code agents made part of the core and the working model; more sources (IEC 62443-4-1, BSI TR-03185, BSI CON.8, ISO/IEC 27034, ISO/IEC 27701, GDPR, AI management and risk standards) |
 | 0.3 | 2026-11-25 | Review fixes: pre-releases (BLD-13); review recorded as a required check (SRC-12); repository backup (SRC-13); developer computers (SRC-14); agent extensions (AGT-19); owner samples agent reviews (AGT-20); person review of security changes (CHG-02); VUL-04 critical limit is now a mitigation or advisory in 7 days and a fix in 30; self-study allowed for training (GOV-06); who approves dependencies (DEP-03); QPL-02 and QCM-01 are SHOULD unless document 07 applies; quarantined tests need a person's approval (QCR-04); TST-04, CHG-01, AGT-02, QDO-04 and QRI-06 retired (merged into others); references updated (ISO 9001:2026, OWASP Top 10:2025, SLSA 1.2, RFC 8174, EU CRA dates and support period); solo-maintainer profile for applications (document 05); ASVS chapters for desktop applications (APP-01); the set for libraries is now reduced to its minimum requirements (library set version 0.4), and an application's own libraries follow that set |
+| 0.4 | 2026-11-25 | The solo-maintainer profile is now the one-person profile, open to every application whatever the number of people who take part, so that one person working with code agents is always enough |
 
 
