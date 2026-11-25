@@ -1,6 +1,6 @@
 # 05 Applications and Services
 
-Part of the Secure Development Requirements for Applications, version 0.4 (draft), 2026-11-25. Read
+Part of the Secure Development Requirements for Applications, version 0.5 (draft), 2026-11-25. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
@@ -70,7 +70,7 @@ A SHOULD that is not met needs a short recorded reason (README, section 3).
 | CHG-02 | MUST | Security changes marked and checked | 01 | | |
 | VUL-01 | MUST | Security policy | 01 | | |
 | VUL-02 | MUST | Reports acknowledged and assessed | 01 | | |
-| VUL-04 | MUST | Fix time limits | 01 | | |
+| VUL-10 | MUST | Response expectations stated | 01 | | |
 | VUL-05 | MUST | Security advisories | 01 | | |
 | VUL-09 | MUST | Coordinated disclosure | 01 | | |
 | PRD-01 | MUST | Secure defaults | 01 | | |

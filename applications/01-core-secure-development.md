@@ -1,6 +1,6 @@
 # 01 Core Secure Development Requirements
 
-Part of the Secure Development Requirements for Applications, version 0.4 (draft), 2026-11-25. Read
+Part of the Secure Development Requirements for Applications, version 0.5 (draft), 2026-11-25. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
@@ -251,9 +251,9 @@ apply as listed in the README.
   weekly, against a public vulnerability database (for example OSV or the NVD). *Evidence:* scan
   results. *Sources:* ISO 27001 A.8.8; SSDF RV.1; EU CRA Annex I Part II.
 - **DEP-06 (MUST) Dependency vulnerabilities fixed in time.** Known vulnerabilities in dependencies
-  are fixed within the time limits of VUL-04, or have a recorded assessment that the software is not
-  affected (for example a VEX statement). *Sources:* ISO 27001 A.8.8; SSDF RV.2; EU CRA Annex I Part
-  II.
+  are fixed within the time limits of VUL-04 where they apply, otherwise on a best-effort basis
+  (VUL-10), or have a recorded assessment that the software is not affected (for example a VEX
+  statement). *Sources:* ISO 27001 A.8.8; SSDF RV.2; EU CRA Annex I Part II.
 - **DEP-07 (MUST) No snapshot dependencies in releases.** Releases do not depend on unreleased or
   changeable versions of dependencies (snapshots, branches, local builds). *Sources:* SSDF PS.3;
   SLSA.
@@ -369,25 +369,29 @@ apply as listed in the README.
 ### Vulnerability Management and Incidents (VUL)
 
 - **VUL-01 (MUST) Security policy.** The repository has a security policy (`SECURITY.md`) that says
-  how to report a vulnerability privately, who receives reports, how quickly they are answered, and
-  which versions get security fixes. The reporting channel is a dedicated security address or the
-  hosting platform's private vulnerability reporting, not a personal address. *Sources:* EU CRA
+  how to report a vulnerability privately, who receives reports, what response to expect (VUL-10),
+  and which versions get security fixes. The reporting channel is a dedicated security address or
+  the hosting platform's private vulnerability reporting, not a personal address. *Sources:* EU CRA
   Annex I Part II (5, 6); ISO/IEC 29147; OSPS Baseline (Vulnerability Management); SSDF RV.1.3; IEC
   62443-4-1 DM.
-- **VUL-02 (MUST) Reports acknowledged and assessed.** A vulnerability report is acknowledged within
-  five working days and is assessed for severity (for example with CVSS) and for whether it is
-  exploitable in the software. *Sources:* ISO/IEC 30111; SSDF RV.2.1; IEC 62443-4-1 DM.
+- **VUL-02 (MUST) Reports acknowledged and assessed.** A vulnerability report is acknowledged and is
+  assessed for severity (for example with CVSS) and for whether it is exploitable in the software.
+  Where support for the application is offered commercially, the report is acknowledged within five
+  working days; otherwise there is no time limit (VUL-10). *Sources:* ISO/IEC 30111; SSDF RV.2.1;
+  IEC 62443-4-1 DM.
 - **VUL-03 (MUST) Vulnerabilities tracked.** Vulnerabilities, found in the code or in dependencies,
   are tracked in one place until closed, with their severity, status and the release that fixes
   them. *Sources:* ISO 27001 A.8.8; SSDF RV.2; IEC 62443-4-1 DM.
-- **VUL-04 (MUST) Fix time limits.** Vulnerabilities are dealt with within these limits from the
-  time they are known, unless an exception (GOV-05) is recorded. Critical: a mitigation, or a
-  security advisory with a workaround, within 7 days, and a fixed release within 30 days. High: a
-  fixed release within 30 days. Medium: within 90 days. Low: at the next planned release. Actively
-  exploited vulnerabilities are mitigated, or users are warned, at once. These limits are the choice
-  of these documents (the EU CRA asks for "without delay"); the organisation MAY set shorter limits,
-  and the limits that apply are stated in `SECURITY.md` (VUL-01). *Sources:* ISO 27001 A.8.8; EU CRA
-  Annex I Part II (2).
+- **VUL-04 (SHOULD) Fix time limits.** This is a MUST where support for the application is offered
+  commercially; an application maintained voluntarily states instead that it has no guaranteed times
+  (VUL-10). Vulnerabilities are dealt with within these limits from the time they are known, unless
+  an exception (GOV-05) is recorded. Critical: a mitigation, or a security advisory with a
+  workaround, within 7 days, and a fixed release within 30 days. High: a fixed release within 30
+  days. Medium: within 90 days. Low: at the next planned release. Actively exploited vulnerabilities
+  are mitigated, or users are warned, at once. These limits are the choice of these documents (the
+  EU CRA asks for "without delay"); the organisation MAY set shorter limits, and the limits that
+  apply are stated in `SECURITY.md` (VUL-01). *Sources:* ISO 27001 A.8.8; EU CRA Annex I Part II
+  (2).
 - **VUL-05 (MUST) Security advisories.** Users are told about fixed vulnerabilities: a security
   advisory with the affected versions, the fixed version, the severity and what users should do.
   Where the software is placed on the EU market, the reporting duties of the EU Cyber Resilience Act
@@ -411,6 +415,11 @@ apply as listed in the README.
   are not yet public are prepared in a private workspace (for example the hosting platform's private
   advisory fork), and the public commit message does not describe how to exploit the fault.
   *Sources:* ISO/IEC 29147, 30111; EU CRA Annex I Part II; SSDF RV.2.
+- **VUL-10 (MUST) Response expectations stated.** The security policy (VUL-01) states honestly what
+  users can expect. An application maintained voluntarily says that reports are handled on a
+  best-effort basis and that no response or fix time is guaranteed. Where support is offered
+  commercially, the policy states the times of VUL-02 and VUL-04. *Sources:* ISO/IEC 29147; OSPS
+  Baseline (Vulnerability Management).
 
 ### Delivered Software and Documentation (PRD)
 
@@ -516,14 +525,14 @@ evidence column follows GOV-09: status, public links and target dates only.
 | VUL-01 | MUST | Security policy | | |
 | VUL-02 | MUST | Reports acknowledged and assessed | | |
 | VUL-03 | MUST | Vulnerabilities tracked | | |
-| VUL-04 | MUST | Fix time limits | | |
+| VUL-04 | SHOULD | Fix time limits | | |
 | VUL-05 | MUST | Security advisories | | |
 | VUL-06 | MUST | Root cause analysis | | |
 | VUL-07 | MUST | Support period stated | | |
 | VUL-08 | MUST | Development incidents reported | | |
 | VUL-09 | MUST | Coordinated disclosure | | |
+| VUL-10 | MUST | Response expectations stated | | |
 | PRD-01 | MUST | Secure defaults | | |
 | PRD-02 | MUST | Security documentation for users | | |
 | PRD-03 | MUST | Updates keep user data | | |
 | PRD-04 | SHOULD | Complete removal | | |
-

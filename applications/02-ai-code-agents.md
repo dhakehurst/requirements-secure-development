@@ -1,6 +1,6 @@
 # 02 Development by AI Code Agents
 
-Part of the Secure Development Requirements for Applications, version 0.4 (draft), 2026-11-25. Read
+Part of the Secure Development Requirements for Applications, version 0.5 (draft), 2026-11-25. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
