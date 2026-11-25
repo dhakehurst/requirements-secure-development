@@ -54,8 +54,8 @@ done once per repository; the section "The Person's Part" lists all of it.
   lowest rights, until rights are assigned by hand. Write access only for people who need it, admin
   access for as few people as possible, and access removed when someone leaves the work. Access is
   checked when someone is given it or leaves the work; no periodic review is needed. *Who:* person,
-  only when access changes. *Evidence:* the platform's access settings. *OSPS Level 1:* OSPS-AC-02.01. *Sources:* ISO 27001
-  A.5.15, A.5.18, A.8.2, A.8.4; OSPS Baseline (Access Control).
+  only when access changes. *Evidence:* the platform's access settings. *OSPS Level 1:*
+  OSPS-AC-02.01. *Sources:* ISO 27001 A.5.15, A.5.18, A.8.2, A.8.4; OSPS Baseline (Access Control).
 - **SRC-03 (MUST) Multi-factor authentication.** Every account with write access to the repository,
   the CI system or a package registry uses multi-factor authentication. *Who:* person, once.
   *Evidence:* hosting platform setting. *OSPS Level 1:* OSPS-AC-01.01. *Sources:* ISO 27001 A.8.5;
