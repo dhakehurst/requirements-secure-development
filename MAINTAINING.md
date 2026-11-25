@@ -55,7 +55,7 @@ texts are sold by ISO and national bodies.
 | ISO 27001 | 2022 | 2022 | 2026-11-25 | L, A | https://www.iso.org/standard/iso-iec-27000-family |
 | ISO 27002 | 2022 | 2022 | 2026-11-25 | A | https://www.iso.org/standard/75652.html |
 | ISO/IEC 27034 | no edition (part 1) | 27034-1:2011 | 2026-11-25 | A | https://www.iso.org/standard/44378.html |
-| ISO/IEC 27701 | no edition | 2025 | 2026-11-25 | A | https://www.iso.org/standard/27701 |
+| ISO/IEC 27701 | 2025 | 2025 | 2026-11-25 | A | https://www.iso.org/standard/27701 |
 | ISO/IEC 29147 | no edition | 2018 (revision started) | 2026-11-25 | L, A | https://www.iso.org/standard/72311.html |
 | ISO/IEC 30111 | no edition | 2019 | 2026-11-25 | L, A | https://www.iso.org/standard/69725.html |
 | ISO/IEC 5230 | no edition | 2020 | 2026-11-25 | L, A | https://www.iso.org/standard/81039.html |
@@ -63,7 +63,7 @@ texts are sold by ISO and national bodies.
 | IEC 62443-4-1 | no edition | 2018 | 2026-11-25 | L, A | https://webstore.iec.ch/en/publication/33615 |
 | SSDF | 1.1 (SP 800-218) | 1.1; 1.2 is a draft (SP 800-218 Rev. 1, December 2025) | 2026-11-25 | L, A | https://csrc.nist.gov/pubs/sp/800/218/r1/ipd |
 | BSI TR-03185 | no version | part 1 (2024) | 2026-11-25 | A | https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/Technische-Richtlinien/TR-nach-Thema-sortiert/tr03185/TR-03185_node.html |
-| BSI TR-03183-2 | no version | 2.1.0 | 2026-11-25 | L, A | https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/Technische-Richtlinien/TR-nach-Thema-sortiert/tr03183/TR-03183_node.html |
+| BSI TR-03183-2 | 2.1.0 | 2.1.0 (3 September 2025) | 2026-11-25 | L, A | https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/Technische-Richtlinien/TR-nach-Thema-sortiert/tr03183/TR-03183_node.html |
 | BSI CON.8 | no edition | Edition 2023 | 2026-11-25 | A | https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium_Einzel_PDFs_2023/03_CON_Konzepte_und_Vorgehensweisen/CON_8_Software_Entwicklung_Edition_2023.pdf |
 | SAMM | 2 | 2 | 2026-11-25 | A | https://owaspsamm.org/model/ |
 | ASVS 5.0 | 5.0 | 5.0.0 | 2026-11-25 | L, A | https://asvs.owasp.org/ |
@@ -83,7 +83,8 @@ texts are sold by ISO and national bodies.
 
 | Short name | Cited | Current | Checked | Sets | Link |
 |------------|-------|---------|---------|------|------|
-| OWASP LLM | 2025 | **2026** (published September 2026) | 2026-11-25 | L, A | https://genai.owasp.org/top-10-for-llm-applications-2026/ |
+| OWASP LLM | 2026 | 2026 (published September 2026; final or draft not stated) | 2026-11-25 | L, A | https://genai.owasp.org/top-10-for-llm-applications-2026/ |
+| OWASP Agentic | 2026 | 2026 (final or draft not stated) | 2026-11-25 | A | https://genai.owasp.org/top-10-for-agentic-applications-2026/ |
 | NIST SP 800-218A | no edition | final (2024) | 2026-11-25 | A | https://csrc.nist.gov/news/2024/nist-publishes-sp-800-218a |
 | NIST AI RMF | AI 100-1 | 1.0 | 2026-11-25 | A | https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10 |
 | ISO/IEC 42001 | no edition | 2023 | 2026-11-25 | A | https://www.iso.org/standard/42001 |
@@ -97,7 +98,7 @@ texts are sold by ISO and national bodies.
 |------------|-------|---------|---------|------|------|
 | ISO 9001 | 2026 | 2026 | 2026-11-25 | A | https://www.iso.org/standard/9001 |
 | ISO/IEC 90003 | no edition | ISO/IEC/IEEE 90003:2018 (for ISO 9001:2015) | 2026-11-25 | A | https://www.iso.org/standard/74348.html |
-| ISO/IEC/IEEE 12207 | no edition | 2026 | 2026-11-25 | A | https://www.iso.org/standard/90219.html |
+| ISO/IEC/IEEE 12207 | 2026 | 2026 (edition 2, April 2026) | 2026-11-25 | A | https://www.iso.org/standard/90219.html |
 | ISO/IEC/IEEE 29148 | no edition | 2018 (revision at DIS) | 2026-11-25 | A | https://www.iso.org/standard/72089.html |
 | ISO/IEC 25010 | 2023 | 2023 | 2026-11-25 | A | https://www.iso.org/standard/78176.html |
 | ISO/IEC 25023 | no edition | 2016 (to be replaced by ISO/IEC 25000-23, at DIS) | 2026-11-25 | A | https://www.iso.org/standard/35747.html |
@@ -163,6 +164,11 @@ them states the reason in its merge request, and updates this section.
   from 1.0, in the release notes of each tag.
 - **D12 SSDF 1.1, not the 1.2 draft.** Drafts are not cited as sources; they are on the watch list
   (section 6).
+- **D13 OWASP LLM ids mapped by subject.** When the 2026 list renumbered the risks, each citation
+  was moved to the 2026 item with the same subject, since OWASP gives no mapping: 2025 LLM03
+  supply chain is now LLM04, LLM04 poisoning LLM05, LLM05 output handling LLM10, LLM06 excessive
+  agency LLM03, LLM07 system prompt leakage LLM08 (hidden context exposure), LLM08 vector and
+  embedding LLM09, LLM09 misinformation LLM07, LLM10 unbounded consumption LLM06.
 
 ## 5. Editing Rules
 
@@ -196,16 +202,15 @@ Sources that are expected to change, and what to do when they do.
 | Source | Expected change | Then |
 |--------|-----------------|------|
 | SSDF 1.2 (SP 800-218 Rev. 1) | final version | update the SSDF row of both READMEs and check the practice ids cited |
-| OWASP LLM Top 10 | 2026 version is out; the sets still cite 2025 | update the citations and the risk ids in document 02 (libraries) and document 06 (applications) |
+| OWASP LLM and Agentic Top 10 | next version | move each citation by subject (D13) |
 | OSPS Baseline | new version | check the Level 1 mapping (libraries README, section 8) and the *OSPS Level 1* fields |
-| ISO/IEC/IEEE 12207 | 2026 edition is out | check that the process names cited still exist |
-| ISO/IEC 27701 | 2025 edition is out | check the clauses cited |
+| ISO/IEC/IEEE 12207 | 2026 edition is cited, but its table of contents was not checked | check that the process names cited in document 03 (applications) still exist |
 | ISO/IEC 25023 | to be replaced by ISO/IEC 25000-23 | change the citation when it is published |
 | ISO/IEC/IEEE 29148, ISO/IEC 29147 | revisions in progress | check the citations when published |
-| BSI TR-03183-2 | new versions | check the SBOM fields required (DEP-09) |
+| BSI TR-03183-2 | 2.1.0 is cited, but its field list was not read (the PDF could not be fetched) | check the SBOM fields and formats required (DEP-09) against 2.1.0 |
 | EN 301 549 | V4 | check the WCAG level it refers to (QRI-05) |
 | EU CRA | implementing acts and harmonised standards | check the reporting and support period requirements |
-| OWASP agentic AI guidance | the GenAI Security Project published agentic AI and agent control documents | consider them as sources for the agent requirements (AGT) |
+| OWASP Agent Control Standard | published by the GenAI Security Project in 2026, status not checked | consider it as a source for the agent requirements (AGT) |
 
 ## 7. Checks
 

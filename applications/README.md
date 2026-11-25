@@ -1,6 +1,6 @@
 # Secure Development Requirements for Applications
 
-Version 0.5 (draft), 2026-11-25
+Version 0.6 (draft), 2026-11-25
 
 ## 1. Purpose
 
@@ -146,13 +146,13 @@ software development; they do not replace the organisation's own policies.
 | ISO 27001 | ISO/IEC 27001:2022, Information security management systems, Annex A (mainly A.5.8, A.5.19 to A.5.23, A.8.1, A.8.4, A.8.8, A.8.9, A.8.13, A.8.24 to A.8.34) |
 | ISO 27002 | ISO/IEC 27002:2022, guidance for the ISO 27001 Annex A controls |
 | ISO/IEC 27034 | Application security |
-| ISO/IEC 27701 | Privacy information management |
+| ISO/IEC 27701 | ISO/IEC 27701:2025, Privacy information management systems |
 | ISO/IEC 29147, 30111 | Vulnerability disclosure; vulnerability handling processes |
 | ISO/IEC 5230, 18974 | OpenChain licence compliance; OpenChain security assurance |
 | IEC 62443-4-1 | Secure product development life cycle requirements (practices SM security management, SR security requirements, SD secure by design, SI secure implementation, SVV security verification and validation testing, DM defect management, SUM security update management, SG security guidelines) |
 | SSDF | NIST SP 800-218, Secure Software Development Framework 1.1 (practices PO, PS, PW, RV). Version 1.2 (SP 800-218 Rev. 1) was still a draft when this version was written; its practice ids may differ |
 | BSI TR-03185 | German Federal Office for Information Security, Technical Guideline Secure Software Lifecycle |
-| BSI TR-03183-2 | German Federal Office for Information Security, Technical Guideline on SBOMs |
+| BSI TR-03183-2 | German Federal Office for Information Security, Technical Guideline on SBOMs, version 2.1.0 |
 | BSI CON.8 | BSI IT-Grundschutz module CON.8, Software development |
 | SAMM | OWASP Software Assurance Maturity Model 2 |
 | ASVS 5.0 | OWASP Application Security Verification Standard 5.0 |
@@ -171,7 +171,8 @@ software development; they do not replace the organisation's own policies.
 
 | Short name | Source |
 |------------|--------|
-| OWASP LLM | OWASP Top 10 for Large Language Model Applications 2025 |
+| OWASP LLM | OWASP Top 10 for LLM Applications 2026 (LLM01 to LLM10) |
+| OWASP Agentic | OWASP Top 10 for Agentic Applications 2026 (ASI01 to ASI10), document 02 |
 | NIST SP 800-218A | SSDF community profile for generative AI and dual-use foundation models |
 | NIST AI RMF | NIST AI Risk Management Framework (AI 100-1) |
 | ISO/IEC 42001 | AI management systems |
@@ -185,7 +186,7 @@ software development; they do not replace the organisation's own policies.
 |------------|--------|
 | ISO 9001 | ISO 9001:2026, Quality management systems |
 | ISO/IEC 90003 | Guidelines for applying ISO 9001 to software |
-| ISO/IEC/IEEE 12207 | Software life cycle processes |
+| ISO/IEC/IEEE 12207 | ISO/IEC/IEEE 12207:2026, Software life cycle processes |
 | ISO/IEC/IEEE 29148 | Requirements engineering |
 | ISO/IEC 25010 | ISO/IEC 25010:2023, product quality model |
 | ISO/IEC 25023 | Measurement of system and software product quality |

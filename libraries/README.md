@@ -114,10 +114,10 @@ controls for software development; they do not replace an organisation's own pol
 | OWASP SCVS | OWASP Software Component Verification Standard |
 | ASVS 5.0 | OWASP Application Security Verification Standard 5.0 |
 | CWE | MITRE Common Weakness Enumeration, including the CWE Top 25 (document 02) |
-| OWASP LLM | OWASP Top 10 for Large Language Model Applications 2025 (document 02) |
+| OWASP LLM | OWASP Top 10 for LLM Applications 2026 (document 02) |
 | EU CRA | Regulation (EU) 2024/2847 (Cyber Resilience Act), Article 14, Annexes I and II |
 | GDPR | Regulation (EU) 2016/679, Article 25 (data protection by design and by default) |
-| BSI TR-03183-2 | German Federal Office for Information Security, Technical Guideline on SBOMs |
+| BSI TR-03183-2 | German Federal Office for Information Security, Technical Guideline on SBOMs, version 2.1.0 |
 | CycloneDX, SPDX | SBOM formats |
 
 ## 8. OSPS Baseline Level 1
