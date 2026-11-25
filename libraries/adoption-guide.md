@@ -90,6 +90,44 @@ vulnerability reports on a best-effort basis and publish advisories; approve qua
 set access when someone joins or leaves; and keep the issue tracker turned on. Everything else is
 done by agents and CI.
 
+## Prompts for the Agent
+
+Copy these into the agent session, one step at a time. Replace `<URL of this repository>` with the
+address of this requirements repository, `<commit>` with the full commit hash of the version to
+follow (for example the latest commit of this repository's main branch), and `<x.y>` with the
+version given at the top of the set's README at that commit.
+
+Step 1, gap assessment:
+
+```text
+This repository will follow the Secure Development Requirements for Libraries, version <x.y>:
+<URL of this repository>/tree/<commit>/libraries
+Read README.md, 01-requirements.md, 02-agent-guidance.md and adoption-guide.md at that commit,
+and A1-kotlin-multiplatform-annex.md if this repository uses Kotlin Multiplatform. Do not copy
+them into this repository.
+
+Do step 1 of the adoption guide (gap assessment) only:
+- Fill in the checklist of document 01 from what you can see in the repository, with evidence
+  for each "met".
+- Mark settings you cannot see (MFA, branch protection, access, CI secrets, registry accounts,
+  private vulnerability reporting) as "not checked". Do not guess.
+- List the tasks for step 3 and the person steps for step 2 that are still open.
+Change no code or settings, and post nothing public. Give me the checklist and both lists here.
+```
+
+Step 3, after the person has done the settings of step 2:
+
+```text
+Do step 3 of the adoption guide: one reviewed merge request per item, the CI checks first.
+```
+
+Step 4, when every item is met or has a target date:
+
+```text
+Do step 4 of the adoption guide: add the checklist, and the reference to the set (README of the
+requirements repository, "Using This Set") to this repository's README.
+```
+
 ## Private Repositories and Hosting Plans
 
 Some hosting plans do not offer every feature for private repositories. For example, on GitHub (as

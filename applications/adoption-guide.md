@@ -107,6 +107,46 @@ the private record, not in public issues) unless the owner decides otherwise:
 
 When an exception's work is done, the exception is closed and the checklist line becomes "met".
 
+## Prompts for the Agent
+
+Copy these into the agent session, one stage at a time. Replace `<URL of this repository>` with the
+address of this requirements repository, `<commit>` with the full commit hash of the version to
+follow (for example the latest commit of this repository's main branch), and `<x.y>` with the
+version given at the top of the set's README at that commit.
+
+Stage 1, gap assessment:
+
+```text
+This repository will follow the Secure Development Requirements for Applications, version <x.y>:
+<URL of this repository>/tree/<commit>/applications
+Read README.md and adoption-guide.md at that commit, then the documents that apply (README,
+section 2), including A1-kotlin-multiplatform-annex.md if this repository uses Kotlin
+Multiplatform. Do not copy the requirement texts into this repository.
+
+Do stage 1 of the adoption guide (gap assessment) only:
+- Propose which documents apply and whether the one-person profile is used.
+- Fill in their checklists from what you can see in the repository, with evidence for each "met".
+- Mark settings you cannot see (MFA, branch protection, access, CI secrets, registry accounts) as
+  "not checked". Do not guess.
+- Draft an exception (GOV-05) with a target stage and date for each MUST that is not met, and
+  list the proposed tasks for stages 2 to 4.
+Change no code or settings, and post nothing public. Give me the result here for review.
+```
+
+Stage 2, after the owner has accepted the result of stage 1:
+
+```text
+Do stage 2 of the adoption guide: one reviewed merge request per quick win, the CI checks first.
+```
+
+Stages 3 and 4:
+
+```text
+From now on, every change meets the requirements (stage 3 of the adoption guide). Work through the
+stage 4 tasks in order of their target dates, one reviewed merge request each, and update the
+checklist and exceptions as items are met.
+```
+
 ## Requirements That Apply Only Going Forward, or Only Once
 
 - **Only going forward**: SBOM, provenance and signatures per release (DEP-09, BLD-06, BLD-07),
