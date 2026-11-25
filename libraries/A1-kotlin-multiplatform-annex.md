@@ -1,6 +1,6 @@
 # A1 Kotlin Multiplatform and Gradle Annex
 
-Part of the Secure Development Requirements for Libraries, version 0.5 (draft), 2026-11-25. Read the
+Part of the Secure Development Requirements for Libraries, version 0.6 (draft), 2026-11-25. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Scope
@@ -39,7 +39,7 @@ Where one is not followed, the requirement still has to be met another way.
   (DEP-03, DEP-05). *Implements:* DEP-02.
 - **KMP-06 Gradle wrapper verified.** The Gradle wrapper is committed with `distributionSha256Sum`
   set in `gradle-wrapper.properties`, and CI validates the wrapper jar (for example with the Gradle
-  wrapper validation action). *Implements:* DEP-02.
+  wrapper validation action). *Implements:* DEP-02, LIB-16.
 - **KMP-07 Vulnerability scan covers all targets.** The vulnerability scan covers the JVM
   dependencies and the npm dependencies of JS and wasm targets (for example OSV-Scanner on the
   Gradle and npm lock files, or the OWASP Dependency-Check Gradle plug-in). *Implements:* DEP-05.

@@ -1,6 +1,6 @@
 # Secure Development Requirements for Libraries
 
-Version 0.5 (draft), 2026-11-25
+Version 0.6 (draft), 2026-11-25
 
 ## 1. Purpose
 
@@ -110,7 +110,7 @@ controls for software development; they do not replace an organisation's own pol
 | IEC 62443-4-1 | Secure product development life cycle requirements |
 | SSDF | NIST SP 800-218, Secure Software Development Framework 1.1 (practices PO, PS, PW, RV). Version 1.2 (SP 800-218 Rev. 1) was still a draft when this version was written; its practice ids may differ |
 | SLSA | Supply-chain Levels for Software Artifacts 1.2 (build and source tracks) |
-| OSPS Baseline | OpenSSF Open Source Project Security Baseline |
+| OSPS Baseline | OpenSSF Open Source Project Security Baseline, version 2026.08.28 (section 8) |
 | OWASP SCVS | OWASP Software Component Verification Standard |
 | ASVS 5.0 | OWASP Application Security Verification Standard 5.0 |
 | CWE | MITRE Common Weakness Enumeration, including the CWE Top 25 (document 02) |
@@ -120,7 +120,47 @@ controls for software development; they do not replace an organisation's own pol
 | BSI TR-03183-2 | German Federal Office for Information Security, Technical Guideline on SBOMs |
 | CycloneDX, SPDX | SBOM formats |
 
-## 8. Changes
+## 8. OSPS Baseline Level 1
+
+A library that meets document 01 meets all 24 controls of Level 1 of the OpenSSF Open Source
+Project Security Baseline (OSPS Baseline), version 2026.08.28. Its checklist MAY say so, for example
+"Meets OSPS Baseline 2026.08.28 Level 1". The table gives, for each control, the requirement that
+covers it. The control texts are short paraphrases; the OSPS Baseline itself is the authority.
+
+| OSPS control | Short paraphrase | Requirement |
+|--------------|------------------|-------------|
+| OSPS-AC-01.01 | MFA for access to sensitive resources of the repository | SRC-03 |
+| OSPS-AC-02.01 | New collaborators get the lowest rights by default | SRC-02 |
+| OSPS-AC-03.01 | Direct commits to the main branch are blocked | SRC-04 |
+| OSPS-AC-03.02 | Deleting the main branch needs explicit confirmation | SRC-04 |
+| OSPS-BR-01.01 | CI sanitises and validates untrusted metadata | BLD-04 |
+| OSPS-BR-01.03 | CI on untrusted code has no privileged credentials | BLD-04 |
+| OSPS-BR-03.01 | Official addresses only over encrypted channels | LIB-01 |
+| OSPS-BR-03.02 | Distribution channels authenticated and encrypted | LIB-01 |
+| OSPS-BR-07.01 | No unencrypted secrets stored in version control | SRC-07, SRC-08 |
+| OSPS-DO-01.01 | User guide for all basic functions | LIB-13 |
+| OSPS-DO-02.01 | Guide for reporting defects | LIB-14 |
+| OSPS-GV-02.01 | Public place to discuss changes and problems | LIB-14 |
+| OSPS-GV-03.01 | Contribution process explained, or contributions not accepted | LIB-15 |
+| OSPS-LE-02.01 | Source code licence is OSI or FSF approved | DEP-08 |
+| OSPS-LE-02.02 | Licence of released assets is OSI or FSF approved | DEP-08 |
+| OSPS-LE-03.01 | Licence kept in a `LICENSE` or `COPYING` file | DEP-08 |
+| OSPS-LE-03.02 | Licence included with released assets | DEP-08 |
+| OSPS-QA-01.01 | Repository publicly readable at a static address | LIB-12 |
+| OSPS-QA-01.02 | Public record of all changes, who made them and when | LIB-12 |
+| OSPS-QA-02.01 | Repository contains the list of direct dependencies | DEP-02 |
+| OSPS-QA-04.01 | Several repositories are listed | LIB-17 |
+| OSPS-QA-05.01 | No generated executables in version control | LIB-16 |
+| OSPS-QA-05.02 | No unreviewable binaries in version control | LIB-16 |
+| OSPS-VM-02.01 | Documentation contains security contacts | GOV-01, VUL-01 |
+
+The other requirements of document 01 go beyond Level 1. Some of them meet controls of Levels 2 and
+3 (for example signing, SBOM, required tests, private reporting and advisories), but a library does
+not claim those levels: Level 2 expects at least two maintainers and a response timeframe, which
+this set does not ask of volunteers (LIB-11). The requirements on code agents (AGT) and on public
+text (GOV-10) have no OSPS control.
+
+## 9. Changes
 
 | Version | Date | Change |
 |---------|------|--------|
@@ -129,3 +169,4 @@ controls for software development; they do not replace an organisation's own pol
 | 0.3 | 2026-11-25 | Review fixes (see the set for applications); minimum profile 31 requirements; no response or fix time limits for voluntarily maintained libraries (LIB-11) |
 | 0.4 | 2026-11-25 | The set is reduced to the minimum profile: document 01 holds all 31 requirements, all MUST, each saying who does it, with a list of the person's part. The rest of the former documents 01 to 04 and 06 became guidance for code agents (document 02), with no checklist. Deterministic results, clear errors, version reporting and marking results that come from a language model are in the guidance. Annex A1 split into practices for the requirements and guidance; no separate checklist |
 | 0.5 | 2026-11-25 | The set applies to every voluntarily maintained library, whatever the number of maintainers; only commercial support moves a library to the fuller requirements |
+| 0.6 | 2026-11-25 | Meets OSPS Baseline 2026.08.28 Level 1 (section 8): new requirements LIB-12 to LIB-17 (public repository, user guide, defect reporting, contribution statement, no binaries, repositories listed); SRC-02, DEP-02, DEP-08, BLD-04 and LIB-01 extended; OSPS control ids on each requirement |

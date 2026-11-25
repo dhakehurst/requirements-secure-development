@@ -1,6 +1,6 @@
 # Adoption Guide for Library Repositories
 
-Part of the Secure Development Requirements for Libraries, version 0.5 (draft), 2026-11-25. Read the
+Part of the Secure Development Requirements for Libraries, version 0.6 (draft), 2026-11-25. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Purpose
@@ -40,14 +40,18 @@ repository's and the account's settings pages.
 6. Signing key created and stored only in the CI system's protected secrets; publishing credentials
    scoped to this library in CI secrets, or trusted publishing set up (BLD-06, LIB-01).
 7. Agent environment without publishing or signing credentials (AGT-03).
-8. Branch protection on the main branch, requiring the checks of SRC-04. Do this after step 3 has
-   added the checks, so that their names exist.
+8. Issue tracker turned on, for defect reports and public discussion (LIB-14).
+9. Decide whether public contributions are accepted; an agent writes the answer into
+   `CONTRIBUTING.md` (LIB-15).
+10. Branch protection on the main branch, requiring the checks of SRC-04, with deletion blocked. Do
+    this after step 3 has added the checks, so that their names exist.
 
 ## Step 3: The Agents' Work
 
 Each item is a separate, reviewed change. Agents MAY do them in any order, but the CI checks come
 first so that the later changes are checked.
 
+- CI workflows that quote or validate values that others can set before using them (BLD-04).
 - CI workflow with the tests for every target (TST-01), secret scanning on every push and once over
   the whole history (SRC-08), the vulnerability scan (DEP-05), and the review check (SRC-05). A
   secret found in the history is reported to the person, who revokes and replaces it first.
@@ -58,11 +62,16 @@ first so that the later changes are checked.
   started by the person (BLD-02, BLD-06, LIB-01).
 - `SECURITY.md` with the reporting channel, the "best effort" statement and the supported versions;
   owner named (GOV-01, VUL-01, LIB-11).
-- Licence stated, dependency licences checked, notices delivered (DEP-08).
+- Licence in a `LICENSE` file and included with each release, dependency licences checked, notices
+  delivered (DEP-08). The repository contains the list of direct dependencies (DEP-02).
+- User guide, how to report defects, `CONTRIBUTING.md`, and the list of repositories if there are
+  several (LIB-13 to LIB-15, LIB-17).
+- Binaries removed from the repository, or, for a build tool wrapper, checked by CI (LIB-16).
 - A check that the library makes no hidden network calls, writes or telemetry (LIB-07).
 - Agent instruction file pointing to documents 01 and 02 and, for Kotlin, annex A1 (document 02,
   section 1).
-- The checklist, with the set's version (GOV-03).
+- The checklist, with the set's version (GOV-03), and the OSPS Baseline Level 1 claim (README,
+  section 8).
 
 The guidance of document 02 is not part of the adoption: agents apply it to every change from now
 on, and improve existing code when they work on it.
@@ -77,8 +86,9 @@ private record.
 
 The person's ongoing part is listed in document 01, "The Person's Part": approve new runtime
 dependencies and changes to CI, publishing or agent configuration; start releases; handle
-vulnerability reports on a best-effort basis and publish advisories; approve quarantined tests; and
-review access once a year. Everything else is done by agents and CI.
+vulnerability reports on a best-effort basis and publish advisories; approve quarantined tests;
+review access once a year; and keep the issue tracker turned on. Everything else is done by agents
+and CI.
 
 ## Private Repositories and Hosting Plans
 
