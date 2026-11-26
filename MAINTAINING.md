@@ -9,8 +9,8 @@ editing, and the sources to watch. Read it before proposing a change.
 | Path | Content |
 |------|---------|
 | `README.md` | How other repositories use the sets; versions |
-| `libraries/` | The set for libraries: README, 01 requirements, 02 guidance for code agents, A1 Kotlin Multiplatform annex, adoption guide |
-| `applications/` | The set for applications: README, 01 core, 02 code agents, 03 quality, 05 applications and services (with the one-person profile), 06 LLM software, 07 tool qualification support, A1 Kotlin Multiplatform annex, adoption guide |
+| `libraries/` | The set for libraries: README, 01 requirements, 02 guidance for code agents, A1 Kotlin and Gradle annex, adoption guide |
+| `applications/` | The set for applications: README, 01 core, 02 code agents, 03 quality, 05 applications and services (with the one-person profile), 06 LLM software, 07 tool qualification support, A1 Kotlin and Gradle annex, adoption guide |
 | `tools/check.py` | Consistency check, run by CI on every push and merge request |
 | `MAINTAINING.md` | This file |
 | `AGENTS.md` | Instructions for code agents that work in this repository |

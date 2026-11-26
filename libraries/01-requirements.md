@@ -1,6 +1,6 @@
 # 01 Requirements for Libraries
 
-Part of the Secure Development Requirements for Libraries, version 0.7 (draft), 2026-11-25. Read the
+Part of the Secure Development Requirements for Libraries, version 0.8 (draft), 2026-11-26. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Scope

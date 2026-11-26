@@ -1,6 +1,6 @@
 # 02 Guidance for Code Agents
 
-Part of the Secure Development Requirements for Libraries, version 0.7 (draft), 2026-11-25. Read the
+Part of the Secure Development Requirements for Libraries, version 0.8 (draft), 2026-11-26. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## 1. How to Use This Guidance
@@ -18,7 +18,7 @@ requirements in document 01 do.
   instructions differ, ask the person.
 
 Agent instruction files in the repository (for example `CLAUDE.md` or `AGENTS.md`) point to document
-01, this document and, for Kotlin Multiplatform, the annex A1, at the version recorded under GOV-03.
+01, this document and, for Kotlin, the annex A1, at the version recorded under GOV-03.
 An agent reads them there (it MAY fetch them into its scratch area) and never commits a copy of
 them.
 

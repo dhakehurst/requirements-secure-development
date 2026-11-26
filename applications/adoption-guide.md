@@ -1,6 +1,6 @@
 # Adoption Guide for Existing Repositories
 
-Part of the Secure Development Requirements for Applications, version 0.6 (draft), 2026-11-25. Read
+Part of the Secure Development Requirements for Applications, version 0.7 (draft), 2026-11-26. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
@@ -120,8 +120,8 @@ Stage 1, gap assessment:
 This repository will follow the Secure Development Requirements for Applications, version <x.y>:
 <URL of this repository>/tree/<commit>/applications
 Read README.md and adoption-guide.md at that commit, then the documents that apply (README,
-section 2), including A1-kotlin-multiplatform-annex.md if this repository uses Kotlin
-Multiplatform. Do not copy the requirement texts into this repository.
+section 2), including A1-kotlin-multiplatform-annex.md if this repository uses
+Kotlin. Do not copy the requirement texts into this repository.
 
 Do stage 1 of the adoption guide (gap assessment) only:
 - Propose which documents apply and whether the one-person profile is used.

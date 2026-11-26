@@ -1,6 +1,6 @@
 # Secure Development Requirements for Applications
 
-Version 0.6 (draft), 2026-11-25
+Version 0.7 (draft), 2026-11-26
 
 ## 1. Purpose
 
@@ -28,7 +28,7 @@ process, so some requirements are about the software itself.
 | [05 Applications and services](05-applications-and-services.md) | always (includes the one-person profile) | APP |
 | [06 Software that uses LLMs](06-llm-software.md) | the software sends data to a language model, uses retrieval, or lets a model call tools | AI |
 | [07 Tool qualification support](07-tool-qualification-support.md) | the application may be used to develop or verify safety-related systems | TQS |
-| [A1 Kotlin Multiplatform annex](A1-kotlin-multiplatform-annex.md) | the repository uses Kotlin Multiplatform and Gradle | KMP |
+| [A1 Kotlin and Gradle annex](A1-kotlin-multiplatform-annex.md) | the repository uses Kotlin (Multiplatform or JVM only) and Gradle | KMP |
 | [Adoption guide](adoption-guide.md) | the repository existed before these requirements were applied | (none) |
 
 An application's own libraries (maintained by the same owner) follow the set for libraries.

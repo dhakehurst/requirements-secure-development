@@ -1,6 +1,6 @@
 # Secure Development Requirements for Libraries
 
-Version 0.7 (draft), 2026-11-25
+Version 0.8 (draft), 2026-11-26
 
 ## 1. Purpose
 
@@ -30,7 +30,7 @@ use.
 |----------|---------|-----|
 | [01 Requirements](01-requirements.md) | always | GOV, SRC, DEP, BLD, TST, VUL, LIB, AGT |
 | [02 Guidance for code agents](02-agent-guidance.md) | always (guidance, not requirements) | (none) |
-| [A1 Kotlin Multiplatform annex](A1-kotlin-multiplatform-annex.md) | the repository uses Kotlin Multiplatform and Gradle | KMP |
+| [A1 Kotlin and Gradle annex](A1-kotlin-multiplatform-annex.md) | the repository uses Kotlin (Multiplatform or JVM only) and Gradle | KMP |
 | [Adoption guide](adoption-guide.md) | how to bring a repository into line, and the person's steps | (none) |
 
 The ids are the same as in the set for applications, so that a requirement means the same in both.

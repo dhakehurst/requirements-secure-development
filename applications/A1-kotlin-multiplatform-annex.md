@@ -1,18 +1,21 @@
-# A1 Kotlin Multiplatform and Gradle Annex
+# A1 Kotlin and Gradle Annex
 
-Part of the Secure Development Requirements for Applications, version 0.6 (draft), 2026-11-25. Read
+Part of the Secure Development Requirements for Applications, version 0.7 (draft), 2026-11-26. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
 ## Scope
 
-Applies to repositories written in Kotlin Multiplatform (JVM, JavaScript, WebAssembly, Native) and
-built with Gradle. It adds no new requirements, but some entries are stricter than the requirement
-they implement, and say so. It says how the requirements of the other documents are met in such a
-repository, so that every repository does it the same way. Each entry names the requirement it
-implements. Where an entry here is not followed, the requirement still applies and has to be met
-another way. Under a profile that turns a MUST into a SHOULD (the one-person profile), an entry here
-has the level of the requirement it implements. KMP-21 is used only in the set for libraries.
+Applies to repositories written in Kotlin and built with Gradle: Kotlin Multiplatform (JVM,
+JavaScript, WebAssembly, Native) or Kotlin for the JVM only. In a JVM-only repository, entries
+marked *Multiplatform only* do not apply, and the parts of other entries about JS, wasm or native
+targets do not apply. It adds no new requirements, but some entries are stricter than the
+requirement they implement, and say so. It says how the requirements of the other documents are met
+in such a repository, so that every repository does it the same way. Each entry names the
+requirement it implements. Where an entry here is not followed, the requirement still applies and
+has to be met another way. Under a profile that turns a MUST into a SHOULD (the one-person profile),
+an entry here has the level of the requirement it implements. KMP-21 is used only in the set for
+libraries.
 
 Tool and plug-in names are given as examples of what is in common use. Use the current maintained
 version, and check that a named option still exists in that version before relying on it.
@@ -36,10 +39,10 @@ version, and check that a named option still exists in that version before relyi
   filtering (`exclusiveContent` or `content { includeGroup(...) }`) so that a public repository
   cannot supply an internal group name. `mavenLocal()` is not used in release builds. *Implements:*
   DEP-01, DEP-07.
-- **KMP-04 (MUST) JavaScript and WebAssembly lock file.** The npm (or yarn) lock file that the
-  Kotlin Gradle plug-in keeps for JS and wasm targets (in `kotlin-js-store/`) is committed, and the
-  build is set to fail when the lock file does not match. npm packages are dependencies like any
-  other (DEP-03, DEP-05). *Implements:* DEP-02.
+- **KMP-04 (MUST) JavaScript and WebAssembly lock file.** *Multiplatform only.* The npm (or yarn)
+  lock file that the Kotlin Gradle plug-in keeps for JS and wasm targets (in `kotlin-js-store/`) is
+  committed, and the build is set to fail when the lock file does not match. npm packages are
+  dependencies like any other (DEP-03, DEP-05). *Implements:* DEP-02.
 - **KMP-05 (SHOULD) Dependency locking.** Gradle dependency locking (`gradle.lockfile`) is turned on
   for the resolved configurations, so that the exact resolved versions, including transitive ones,
   are in the repository and can be read by vulnerability scanners. *Implements:* DEP-02, DEP-05.
@@ -87,9 +90,10 @@ version, and check that a named option still exists in that version before relyi
 - **KMP-17 (MUST) Bounded coroutines.** Coroutines use structured concurrency: no `GlobalScope` for
   work started by input, timeouts on network and long-running calls, and cancellation passed on.
   *Implements:* COD-10.
-- **KMP-18 (MUST) Platform code reviewed as security code.** `expect`/`actual` implementations that
-  touch files, processes, network, cryptography or secrets are treated as security-relevant code
-  (DES-06), and each platform implementation is tested. *Implements:* DES-06, TST-02.
+- **KMP-18 (MUST) Platform code reviewed as security code.** *Multiplatform only.* `expect`/`actual`
+  implementations that touch files, processes, network, cryptography or secrets are treated as
+  security-relevant code (DES-06), and each platform implementation is tested. *Implements:* DES-06,
+  TST-02.
 - **KMP-19 (MUST) Cryptography per platform.** Cryptography uses the platform's vetted
   implementation (for example the JDK providers on the JVM, the Web Crypto API in the browser) or a
   maintained multiplatform library, never code written in the repository. *Implements:* COD-05.

@@ -1,6 +1,6 @@
 # Adoption Guide for Library Repositories
 
-Part of the Secure Development Requirements for Libraries, version 0.7 (draft), 2026-11-25. Read the
+Part of the Secure Development Requirements for Libraries, version 0.8 (draft), 2026-11-26. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Purpose
@@ -103,7 +103,7 @@ Step 1, gap assessment:
 This repository will follow the Secure Development Requirements for Libraries, version <x.y>:
 <URL of this repository>/tree/<commit>/libraries
 Read README.md, 01-requirements.md, 02-agent-guidance.md and adoption-guide.md at that commit,
-and A1-kotlin-multiplatform-annex.md if this repository uses Kotlin Multiplatform. Do not copy
+and A1-kotlin-multiplatform-annex.md if this repository uses Kotlin. Do not copy
 them into this repository.
 
 Do step 1 of the adoption guide (gap assessment) only:

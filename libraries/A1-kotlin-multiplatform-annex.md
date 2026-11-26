@@ -1,22 +1,24 @@
-# A1 Kotlin Multiplatform and Gradle Annex
+# A1 Kotlin and Gradle Annex
 
-Part of the Secure Development Requirements for Libraries, version 0.7 (draft), 2026-11-25. Read the
+Part of the Secure Development Requirements for Libraries, version 0.8 (draft), 2026-11-26. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Scope
 
-Applies to repositories written in Kotlin Multiplatform (JVM, JavaScript, WebAssembly, Native) and
-built with Gradle. It adds no requirements: the first part says how the requirements of document 01
-are met, and the second part says how the guidance of document 02 is applied. KMP-22 and KMP-23 are
-used only in the set for applications. There is no separate checklist: the checklist of document 01
-is the only one.
+Applies to repositories written in Kotlin and built with Gradle: Kotlin Multiplatform (JVM,
+JavaScript, WebAssembly, Native) or Kotlin for the JVM only. In a JVM-only repository, entries
+marked *Multiplatform only* do not apply, and the parts of other entries about JS, wasm or native
+targets do not apply. It adds no requirements: the first part says how the requirements of document
+01 are met, and the second part says how the guidance of document 02 is applied. KMP-22 and KMP-23
+are used only in the set for applications. There is no separate checklist: the checklist of document
+01 is the only one.
 
 Tool and plug-in names are given as examples of what is in common use. Use the current maintained
 version, and check that a named option still exists in that version before relying on it.
 
 ## Practices for the Requirements
 
-Each of these says how a requirement of document 01 is met in a Kotlin Multiplatform repository.
+Each of these says how a requirement of document 01 is met in a Kotlin repository.
 Where one is not followed, the requirement still has to be met another way.
 
 - **KMP-01 Versions in one catalogue.** All dependency and plug-in versions are in the Gradle
@@ -33,10 +35,10 @@ Where one is not followed, the requirement still has to be met another way.
   filtering (`exclusiveContent` or `content { includeGroup(...) }`) so that a public repository
   cannot supply an internal group name. `mavenLocal()` is not used in release builds. *Implements:*
   DEP-01.
-- **KMP-04 JavaScript and WebAssembly lock file.** The npm (or yarn) lock file that the Kotlin
-  Gradle plug-in keeps for JS and wasm targets (in `kotlin-js-store/`) is committed, and the build
-  is set to fail when the lock file does not match. npm packages are dependencies like any other
-  (DEP-03, DEP-05). *Implements:* DEP-02.
+- **KMP-04 JavaScript and WebAssembly lock file.** *Multiplatform only.* The npm (or yarn) lock file
+  that the Kotlin Gradle plug-in keeps for JS and wasm targets (in `kotlin-js-store/`) is committed,
+  and the build is set to fail when the lock file does not match. npm packages are dependencies like
+  any other (DEP-03, DEP-05). *Implements:* DEP-02.
 - **KMP-06 Gradle wrapper verified.** The Gradle wrapper is committed with `distributionSha256Sum`
   set in `gradle-wrapper.properties`, and CI validates the wrapper jar (for example with the Gradle
   wrapper validation action). *Implements:* DEP-02, LIB-16.
@@ -53,15 +55,18 @@ Where one is not followed, the requirement still has to be met another way.
   in the repository. *Implements:* SRC-07.
 - **KMP-13 CI runs every target.** CI runs the tests of every supported target (for example
   `jvmTest`, `jsTest`, `wasmJsTest`, native test tasks), not only the JVM. *Implements:* TST-01.
-- **KMP-21 Maven Central publishing.** Libraries are published to Maven Central from CI only, signed
-  with the Gradle signing plug-in using an in-memory key from CI secrets, with sources and
-  documentation jars, complete POM metadata (licence, source repository, developers) and Gradle
-  module metadata. *Implements:* LIB-01, BLD-06, DEP-08.
+- **KMP-21 Publishing to Maven Central or the Gradle Plugin Portal.** Libraries are published to
+  Maven Central; Gradle plug-ins are published to Maven Central or the Gradle Plugin Portal (with
+  the `com.gradle.plugin-publish` plug-in). Publishing is done from CI only, with the publishing
+  credentials in CI secrets. Artefacts are signed with the Gradle signing plug-in using an
+  in-memory key from CI secrets, with sources and documentation jars, complete POM metadata
+  (licence, source repository, developers) and Gradle module metadata. *Implements:* LIB-01,
+  BLD-06, DEP-08.
 
 ## Guidance
 
 These are not requirements. They say how the guidance of document 02 is applied in a Kotlin
-Multiplatform repository, and agents follow them unless there is a reason not to.
+repository, and agents follow them unless there is a reason not to.
 
 - **KMP-05 Dependency locking.** Gradle dependency locking (`gradle.lockfile`) is turned on for the
   resolved configurations, so that the exact resolved versions, including transitive ones, are in
@@ -87,9 +92,10 @@ Multiplatform repository, and agents follow them unless there is a reason not to
 - **KMP-17 Bounded coroutines.** Coroutines use structured concurrency: no `GlobalScope` for work
   started by input, timeouts on network and long-running calls, and cancellation passed on.
   *Guidance:* document 02, section 5.
-- **KMP-18 Platform code reviewed as security code.** `expect`/`actual` implementations that touch
-  files, processes, network, cryptography or secrets are treated as security-relevant code (document
-  02, section 4), and each platform implementation is tested. *Guidance:* document 02, section 4.
+- **KMP-18 Platform code reviewed as security code.** *Multiplatform only.* `expect`/`actual`
+  implementations that touch files, processes, network, cryptography or secrets are treated as
+  security-relevant code (document 02, section 4), and each platform implementation is tested.
+  *Guidance:* document 02, section 4.
 - **KMP-19 Cryptography per platform.** Cryptography uses the platform's vetted implementation (for
   example the JDK providers on the JVM, the Web Crypto API in the browser) or a maintained
   multiplatform library, never code written in the repository. *Guidance:* document 02, section 5.
