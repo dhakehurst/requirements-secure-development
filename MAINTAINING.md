@@ -169,6 +169,10 @@ them states the reason in its merge request, and updates this section.
   supply chain is now LLM04, LLM04 poisoning LLM05, LLM05 output handling LLM10, LLM06 excessive
   agency LLM03, LLM07 system prompt leakage LLM08 (hidden context exposure), LLM08 vector and
   embedding LLM09, LLM09 misinformation LLM07, LLM10 unbounded consumption LLM06.
+- **D14 Releases are published from CI only.** Publishing from a person's own computer was
+  considered and rejected: a release built and signed in CI can be traced to its source, and after
+  a one-off setup each release is one approval. The signing key is a release-only key held in the
+  CI system's protected secrets, not a personal key (BLD-06, LIB-01, KMP-21).
 
 ## 5. Editing Rules
 
