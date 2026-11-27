@@ -59,6 +59,15 @@ These need little code and close the most common gaps. Each is a separate review
 - Repository backup set up (SRC-13), developer computers checked (SRC-14), and agent extensions in
   use listed and approved (AGT-19).
 
+Repository backup (SRC-13), for example: a CI job pushes a mirror (`git clone --mirror`, then `git
+push --mirror`) to a private repository on a second Git host, or to storage that the owner controls.
+For an application maintained voluntarily the job runs as a separate step of the release workflow;
+otherwise on a monthly schedule. It holds one credential, kept in CI secrets, that can write only to
+the copy, and it has no publishing rights (BLD-04). Issues and merge requests are exported with the
+platform's export feature or API. The restore test clones the copy into an empty directory and runs
+the build (BLD-01). Where the copy is kept goes in the private record of a public repository
+(GOV-09).
+
 ## Private Repositories and Hosting Plans
 
 Some hosting plans do not offer every platform feature for private repositories. For example, on
