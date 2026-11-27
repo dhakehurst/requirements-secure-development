@@ -1,6 +1,6 @@
 # 01 Requirements for Libraries
 
-Part of the Secure Development Requirements for Libraries, version 0.8 (draft), 2026-11-26. Read the
+Part of the Secure Development Requirements for Libraries, version 0.9 (draft), 2026-11-27. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Scope
@@ -122,14 +122,14 @@ done once per repository; the section "The Person's Part" lists all of it.
   update, or has a short recorded assessment that the library is not affected. *Who:* CI, set up
   once by an agent; agents propose the updates. *Evidence:* scan results. *Sources:* ISO 27001
   A.8.8; SSDF RV.1, RV.2; EU CRA Annex I Part II.
-- **DEP-08 (MUST) Open source licence, dependency licences known.** The library's licence meets the
-  OSI Open Source Definition or the FSF Free Software Definition (for example Apache-2.0), is kept
-  in a `LICENSE` or `COPYING` file in the repository, and is included in each released artefact or
-  alongside it. The licences of all dependencies are known and compatible with the library's own
-  licence, and notices required by the licences of its dependencies are delivered with it. *Who:*
-  agent; checked in the review of DEP-03. *OSPS Level 1:* OSPS-LE-02.01, OSPS-LE-02.02,
-  OSPS-LE-03.01, OSPS-LE-03.02. *Sources:* ISO 27001 A.5.32; ISO/IEC 5230 (OpenChain); OSPS Baseline
-  (Legal).
+- **DEP-08 (MUST) Open source licence, dependency licences known.** The licence of a public library
+  (a private library: README, section 1) meets the OSI Open Source Definition or the FSF Free
+  Software Definition (for example Apache-2.0), is kept in a `LICENSE` or `COPYING` file in the
+  repository, and is included in each released artefact or alongside it. The licences of all
+  dependencies are known and compatible with the library's own licence, and notices required by the
+  licences of its dependencies are delivered with it. *Who:* agent; checked in the review of DEP-03.
+  *OSPS Level 1:* OSPS-LE-02.01, OSPS-LE-02.02, OSPS-LE-03.01, OSPS-LE-03.02. *Sources:* ISO 27001
+  A.5.32; ISO/IEC 5230 (OpenChain); OSPS Baseline (Legal).
 - **DEP-09 (MUST) SBOM per release.** A software bill of materials (SBOM) in a standard format
   (CycloneDX or SPDX) is produced by the build for every release and published with it. It lists all
   components with name, version, supplier, licence, a unique identifier (for example a package URL)
@@ -147,22 +147,24 @@ done once per repository; the section "The Person's Part" lists all of it.
   contributions (for example merge requests from forks). Values that others can set (branch names,
   tags, commit messages, merge request titles and descriptions, author names) are quoted or
   validated before a pipeline uses them, and are never put directly into a shell command. *Who:*
-  agent writes the workflows; the person approves them (SRC-05). *OSPS Level 1:* OSPS-BR-01.01,
-  OSPS-BR-01.03. *Sources:* SSDF PO.5; OSPS Baseline (Build and Release).
+  person sets CI token permissions read-only by default, once; agent writes the workflows; the
+  person approves them (SRC-05). *OSPS Level 1:* OSPS-BR-01.01, OSPS-BR-01.03. *Sources:* SSDF PO.5;
+  OSPS Baseline (Build and Release).
 - **BLD-06 (MUST) Signed artefacts with checksums.** Release artefacts are signed and published with
   checksums, so that users can check that what they received is what was built. Signing keys are
   kept only in the CI system's protected secrets or a key store, never in the repository. *Who:*
   person creates the key and puts it in CI secrets, once; CI signs. *Sources:* SSDF PS.2; ISO 27001
   A.8.24; EU CRA Annex I Part I; SLSA.
 - **LIB-01 (MUST) Published from CI by the person, with scoped credentials.** The library is
-  published only to its official registry, only from the CI release job (BLD-02), and only when the
-  person starts the release; agents prepare releases but never start them (AGT-05). Publishing
-  credentials are held only by the CI system and the person, are scoped to this library, and use
-  multi-factor authentication or short-lived tokens (for example trusted publishing). All official
-  addresses of the library (repository, documentation, downloads) are reached only over encrypted,
-  authenticated connections (HTTPS or SSH). *Who:* person sets up the credentials once, and starts
-  each release (one action). *OSPS Level 1:* OSPS-BR-03.01, OSPS-BR-03.02. *Sources:* SSDF PS.2;
-  SLSA; OSPS Baseline (Build and Release).
+  published only to its official registry (for a private library, a private registry that the owner
+  controls), only from the CI release job (BLD-02), and only when the person starts the release;
+  agents prepare releases but never start them (AGT-05). Publishing credentials are held only by the
+  CI system and the person, are scoped to this library, and use multi-factor authentication or
+  short-lived tokens (for example trusted publishing). All official addresses of the library
+  (repository, documentation, downloads) are reached only over encrypted, authenticated connections
+  (HTTPS or SSH). *Who:* person sets up the credentials once, and starts each release (one action).
+  *OSPS Level 1:* OSPS-BR-03.01, OSPS-BR-03.02. *Sources:* SSDF PS.2; SLSA; OSPS Baseline (Build and
+  Release).
 - **LIB-03 (MUST) Published versions never changed.** A published version is never changed or
   replaced. A faulty version is fixed by a new version and, where the registry allows, the faulty
   one is marked as such. *Who:* agent and person. *Sources:* SSDF PS.3; SLSA.
@@ -213,28 +215,33 @@ done once per repository; the section "The Person's Part" lists all of it.
 
 - **LIB-12 (MUST) Public repository and history.** The source repository is publicly readable at a
   stable address, with a public record of every change, who made it and when. History is not
-  rewritten in a way that hides who made a change. *Who:* person, once (a public repository). *OSPS
-  Level 1:* OSPS-QA-01.01, OSPS-QA-01.02.
+  rewritten in a way that hides who made a change. A private library (README, section 1) is the
+  exception. *Who:* person, once (a public repository). *OSPS Level 1:* OSPS-QA-01.01,
+  OSPS-QA-01.02. *Sources:* OSPS Baseline (Quality).
 - **LIB-13 (MUST) User guide.** After each release, the documentation includes a user guide for all
   basic functions: how to install, configure and use the library, with clearly visible warnings on
-  options that are dangerous. *Who:* agent. *OSPS Level 1:* OSPS-DO-01.01.
+  options that are dangerous. *Who:* agent. *OSPS Level 1:* OSPS-DO-01.01. *Sources:* OSPS
+  Baseline (Documentation).
 - **LIB-14 (MUST) Defect reporting and public discussion.** The documentation says how to report a
   defect (normally the repository's issue tracker) and what to expect, on a best-effort basis
   (LIB-11). There is a public place to discuss proposed changes and problems with using the library
   (normally the same issue tracker). *Who:* agent writes it; the person keeps the issue tracker
-  turned on. *OSPS Level 1:* OSPS-DO-02.01, OSPS-GV-02.01.
+  turned on. *OSPS Level 1:* OSPS-DO-02.01, OSPS-GV-02.01. *Sources:* OSPS Baseline (Documentation,
+  Governance).
 - **LIB-15 (MUST) Contribution statement.** A `CONTRIBUTING.md` file explains how to contribute, or
   says clearly that public contributions are not accepted. *Who:* the person decides which, once; an
-  agent writes it. *OSPS Level 1:* OSPS-GV-03.01.
+  agent writes it. *OSPS Level 1:* OSPS-GV-03.01. *Sources:* OSPS Baseline (Governance).
 - **LIB-16 (MUST NOT) No binaries in the repository.** The repository MUST NOT contain generated
   executables, or binary files that cannot be reviewed (compiled code, libraries, archives of them).
   Images, sounds and similar assets are allowed. Binaries needed for tests are generated by the
   build, or fetched in a documented build step. A build tool wrapper (for example
   `gradle-wrapper.jar`) is kept only if CI checks it against the checksum its publisher publishes
   (A1, KMP-06); this is this set's reading of OSPS-QA-05.02, which does not mention wrappers. *Who:*
-  agent; checked in every review. *OSPS Level 1:* OSPS-QA-05.01, OSPS-QA-05.02.
+  agent; checked in every review. *OSPS Level 1:* OSPS-QA-05.01, OSPS-QA-05.02. *Sources:* OSPS
+  Baseline (Quality).
 - **LIB-17 (MUST) Repositories listed.** Where the library is built from more than one repository,
   the documentation lists them, with what each is for. *Who:* agent. *OSPS Level 1:* OSPS-QA-04.01.
+  *Sources:* OSPS Baseline (Quality).
 
 ### Code Agents (AGT)
 
@@ -267,6 +274,8 @@ Everything else is done by agents or runs in CI. The adoption guide gives the st
 
 - Name yourself as owner (GOV-01) and turn on multi-factor authentication for every account that can
   write (SRC-03).
+- Make the repository public, unless it is a private library (LIB-12).
+- Set CI token permissions to read-only by default (BLD-04).
 - Protect the main branch with the required checks (SRC-04).
 - Turn on private vulnerability reporting (VUL-01), keep the issue tracker on (LIB-14), decide
   whether public contributions are accepted (LIB-15) and, where it is a platform setting, secret

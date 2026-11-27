@@ -1,6 +1,6 @@
 # 03 Quality Requirements
 
-Part of the Secure Development Requirements for Applications, version 0.7 (draft), 2026-11-26. Read
+Part of the Secure Development Requirements for Applications, version 0.8 (draft), 2026-11-27. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
@@ -85,9 +85,10 @@ requirements on testing and review are in the core document and are not repeated
 ### Release and Improvement (QRI)
 
 - **QRI-01 (MUST) Release criteria.** A release is made only when the release criteria are met: all
-  tests pass on all supported platforms (QPL-03), the quality targets (QPL-05) are met or have a
-  recorded exception, the documentation (QDO-01 to QDO-03, BLD-10) is updated, and the known
-  problems list is up to date. *Sources:* ISO 9001 8.6; ISO/IEC/IEEE 29119-2 (test completion).
+  tests pass on all supported platforms (QPL-03), the quality targets (QPL-05) are met, or a short
+  reason is recorded for each that is not, the documentation (QDO-01 to QDO-03, BLD-10) is updated,
+  and the known problems list is up to date. *Sources:* ISO 9001 8.6; ISO/IEC/IEEE 29119-2 (test
+  completion).
 - **QRI-02 (MUST) User problem reports handled.** Problem reports from users are recorded, answered,
   classified (fault, question, wish) and tracked until closed. *Sources:* ISO 9001 8.2.1, 10.2;
   ISO/IEC/IEEE 12207 (problem resolution).

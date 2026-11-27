@@ -116,6 +116,7 @@ texts are sold by ISO and national bodies.
 | Short name | Cited | Current | Checked | Sets | Link |
 |------------|-------|---------|---------|------|------|
 | IEC 61508-3 | no edition, 7.4.4 | 2010 | 2026-11-25 | A | https://webstore.iec.ch/publication/5517 |
+| IEC 61508-4 | no edition (tool classes T1 to T3) | not checked (the publisher's page could not be reached) | 2026-11-27 | A | https://webstore.iec.ch/ |
 
 ## 4. Decisions
 
@@ -173,6 +174,21 @@ them states the reason in its merge request, and updates this section.
   considered and rejected: a release built and signed in CI can be traced to its source, and after
   a one-off setup each release is one approval. The signing key is a release-only key held in the
   CI system's protected secrets, not a personal key (BLD-06, LIB-01, KMP-21).
+- **D15 Private libraries for the owner's own software; public software uses public components.**
+  A library used only by its owner's own applications and libraries MAY be private, and follows
+  the library set with the items that exist for public open source projects marked n/a (LIB-12 to
+  LIB-17, the open source licence of DEP-08, the official registry of LIB-01); it claims no OSPS
+  Baseline level (libraries README, section 1). Otherwise an application's own private library
+  could meet no set. A public library or application depends only on publicly available
+  components, because its users could not obtain a private one, and a build that needs private
+  credentials cannot run its tests on contributions from forks (BLD-04, TST-01).
+- **D16 No calendar periods for voluntary applications.** Recurring duties of an application that
+  is maintained voluntarily are tied to events, not to the calendar: agent reviews are sampled
+  before each release (AGT-20), access is checked when it changes (SRC-02, as in D10), the backup
+  is updated before each release and restored before each major release (SRC-13), the checklist is
+  reviewed before each major release (GOV-04), and the person review of an emergency change follows
+  before the next release (CHG-03). A fixed period is a time limit that a volunteer cannot promise,
+  for the same reason as D4. Where support is offered commercially, the calendar periods apply.
 
 ## 5. Editing Rules
 
@@ -214,6 +230,7 @@ Sources that are expected to change, and what to do when they do.
 | BSI TR-03183-2 | 2.1.0 is cited, but its field list was not read (the PDF could not be fetched) | check the SBOM fields and formats required (DEP-09) against 2.1.0 |
 | EN 301 549 | V4 | check the WCAG level it refers to (QRI-05) |
 | EU CRA | implementing acts and harmonised standards | check the reporting and support period requirements |
+| IEC 61508-4 | its edition was not checked (the IEC webstore could not be reached) | check the edition and the link, and complete its row in section 3 |
 | OWASP Agent Control Standard | published by the GenAI Security Project in 2026, status not checked | consider it as a source for the agent requirements (AGT) |
 
 ## 7. Checks

@@ -1,6 +1,6 @@
 # 02 Development by AI Code Agents
 
-Part of the Secure Development Requirements for Applications, version 0.7 (draft), 2026-11-26. Read
+Part of the Secure Development Requirements for Applications, version 0.8 (draft), 2026-11-27. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
@@ -19,9 +19,9 @@ people, following the working model in the README.
 - **AGT-02 (retired in 0.3).** Merged into SRC-05 and AGT-15.
 - **AGT-03 (MUST) Agents sandboxed, least privilege.** Agents run with the least privileges they
   need: in a sandbox or a separate environment, with access only to the repositories of the task,
-  with no access to production systems, production data or production secrets, and with network
-  access limited to what the task needs. *Sources:* ISO 27001 A.8.2, A.8.31; SSDF PO.5; OWASP
-  Agentic ASI03.
+  with no access to production systems, production data, production secrets, or publishing and
+  signing credentials, and with network access limited to what the task needs. *Sources:* ISO 27001
+  A.8.2, A.8.31; SSDF PO.5; OWASP Agentic ASI03.
 - **AGT-04 (MUST NOT) No long-lived personal credentials.** Agents MUST NOT be given long-lived
   personal credentials. Where an agent needs to push, it uses a credential scoped to the repository
   and the task, which can be revoked. *Sources:* ISO 27001 A.5.17, A.5.18.
@@ -85,10 +85,11 @@ people, following the working model in the README.
   configuration (AGT-16), and is removed when no longer used. An extension that can run commands or
   reach the network is security-relevant (CHG-02). *Sources:* ISO 27001 A.5.19, A.5.21; SSDF PW.4;
   OWASP LLM04; OWASP Agentic ASI04.
-- **AGT-20 (MUST) Owner samples agent reviews.** In each month in which changes were merged, the
-  owner picks at least one change that was reviewed only by an agent session, reviews it, and
-  records the result. Where the owner finds a fault that the agent review missed, the review
-  instructions are improved (QRI-04). *Sources:* ISO/IEC 20246; SSDF PW.7.
+- **AGT-20 (MUST) Owner samples agent reviews.** In each month in which changes were merged (for an
+  application maintained voluntarily: before each release), the owner picks at least one change,
+  merged since the last sample, that was reviewed only by an agent session, reviews it, and records
+  the result. Where the owner finds a fault that the agent review missed, the review instructions
+  are improved (QRI-04). *Sources:* ISO/IEC 20246; SSDF PW.7.
 
 ## Checklist
 

@@ -1,6 +1,6 @@
 # 02 Guidance for Code Agents
 
-Part of the Secure Development Requirements for Libraries, version 0.8 (draft), 2026-11-26. Read the
+Part of the Secure Development Requirements for Libraries, version 0.9 (draft), 2026-11-27. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## 1. How to Use This Guidance
@@ -105,7 +105,8 @@ fixes or answers each finding before merge. The review then sets the review chec
 
 ## 5. Secure Coding
 
-Follow a maintained secure coding guide for each language used, and these points.
+Follow a maintained secure coding guide for each language used, and these points, which cover the
+most common weaknesses of the CWE Top 25.
 
 - **Validate input at the trust boundary** against an allow-list of what is expected: type, length,
   range, format. Untrusted input includes files, network messages, command-line arguments,
@@ -217,7 +218,7 @@ When in doubt, leave it out and ask the person.
 ## 11. Libraries That Use Language Models
 
 Where the library sends data to a language model, uses retrieval, or offers tools that a model can
-call:
+call (the risks of the OWASP Top 10 for LLM Applications 2026):
 
 - Treat everything that reaches the model from outside the caller's own instruction (documents,
   retrieved data, tool results, file names) as untrusted, keep it separate from instructions, and

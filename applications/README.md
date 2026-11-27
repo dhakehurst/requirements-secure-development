@@ -1,6 +1,6 @@
 # Secure Development Requirements for Applications
 
-Version 0.7 (draft), 2026-11-26
+Version 0.8 (draft), 2026-11-27
 
 ## 1. Purpose
 
@@ -31,7 +31,10 @@ process, so some requirements are about the software itself.
 | [A1 Kotlin and Gradle annex](A1-kotlin-multiplatform-annex.md) | the repository uses Kotlin (Multiplatform or JVM only) and Gradle | KMP |
 | [Adoption guide](adoption-guide.md) | the repository existed before these requirements were applied | (none) |
 
-An application's own libraries (maintained by the same owner) follow the set for libraries.
+An application's own libraries (maintained by the same owner) follow the set for libraries; one
+used only by its owner's own applications and libraries MAY be private (libraries README, section
+1). A public application depends only on publicly available components, so that anyone can build it
+and its tests can run on every contribution.
 Third-party dependencies, including the language runtime and its standard library, are assessed and
 monitored but are not required to meet these requirements (DEP-12). Any application MAY follow the
 **one-person profile** in document 05 instead of the full set, so that one person working with code
@@ -67,7 +70,8 @@ Development is assumed to be done mainly by code agents, directed by people:
    these requirements, not the reasoning of the session that wrote it. A person MAY review instead
    or as well. A session never reviews its own change. The result is recorded as a required check
    (SRC-12). A change marked as a security change (CHG-02) is reviewed by a person as well, and the
-   owner reviews a sample of agent-reviewed changes each month (AGT-20).
+   owner reviews a sample of agent-reviewed changes each month, or before each release where the
+   application is maintained voluntarily (AGT-20).
 4. **A person approves** anything that changes security settings of the repository, CI or release
    process (SRC-06), every release (BLD-09), every exception (GOV-05), and any step that cannot be
    undone (AGT-14).
@@ -81,12 +85,14 @@ recorded reason is enough.
 
 ## 5. Public Repositories
 
-These requirements and each repository's filled-in checklists are meant to be published in the
-repository, so that anyone can see that it complies. Publishing them must not weaken the security it
-shows. The rules for that are GOV-09 to GOV-11, DES-07, VUL-09 and AGT-18; in short:
+Each repository's reference to this set (GOV-03) and its filled-in checklists are meant to be
+published in the repository, so that anyone can see that it complies. Publishing them must not
+weaken the security it shows. The rules for that are GOV-09 to GOV-11, DES-07, VUL-09 and AGT-18; in
+short:
 
-- **Public**: the requirements, which of them apply, the status of each, links to public evidence
-  (CI results, published SBOMs, signatures, `SECURITY.md`), target dates for open items.
+- **Public**: the reference to the set, which documents apply, the status of each requirement, links
+  to public evidence (CI results, published SBOMs, signatures, `SECURITY.md`), target dates for open
+  items.
 - **Private**: details of open gaps and exceptions, threats without a measure yet, vulnerabilities
   before their fix is released, names and contacts of people beyond public handles, internal
   systems, and who uses the software. The private record is shown to auditors on request.

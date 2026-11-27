@@ -1,6 +1,6 @@
 # 01 Core Secure Development Requirements
 
-Part of the Secure Development Requirements for Applications, version 0.7 (draft), 2026-11-26. Read
+Part of the Secure Development Requirements for Applications, version 0.8 (draft), 2026-11-27. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
@@ -30,8 +30,9 @@ apply as listed in the README.
   `SECURITY.md`, and the filled-in checklists of those documents in the repository. *Sources:* ISO
   27001 A.8.25, A.5.37.
 - **GOV-04 (MUST) Checklist reviewed yearly and before major releases.** The checklist is reviewed
-  at least once a year, and before each major release. *Evidence:* date of last review in the
-  checklist. *Sources:* ISO 27001 A.5.35, A.5.36; SAMM Governance.
+  before each major release and, where support for the application is offered commercially, also at
+  least once a year. *Evidence:* date of last review in the checklist. *Sources:* ISO 27001 A.5.35,
+  A.5.36; SAMM Governance.
 - **GOV-05 (MUST) Exceptions recorded.** Every MUST that is not met has a recorded exception: the
   requirement, the reason, the risk, any compensating measure, who accepted the risk, and an expiry
   or review date. *Evidence:* exceptions listed in the checklist. *Sources:* ISO 27001 clause 6.1.3;
@@ -56,17 +57,17 @@ apply as listed in the README.
   supplier is bound by contract to these requirements (or equivalent), and the delivered code is
   reviewed and tested as if it were written in-house. *Evidence:* contract clause; review records.
   *Sources:* ISO 27001 A.5.20, A.8.30.
-- **GOV-09 (MUST) Public compliance record.** In a public repository, these requirements and the
-  filled-in checklists are published, so that compliance can be shown. The public checklist gives
-  the status of each requirement and links to public evidence only. It MUST NOT contain: details of
-  weaknesses that are not yet fixed (what is missing, where, or how it could be used), vulnerability
-  details before the fix is released (VUL-09), names of people other than public maintainer handles,
-  contact details other than the security contact, internal host names or network details, names of
-  secrets, account or key identifiers, or which customers, programmes or organisations use the
-  software. For a MUST that is not met, the public line says only "exception recorded" and the
-  target date; the exception itself (GOV-05) is kept in a private record (for example a private
-  repository, or the hosting platform's private security advisories) and is shown to auditors on
-  request. *Sources:* ISO 27001 A.5.12, A.5.14, A.8.12; ISO/IEC 29147.
+- **GOV-09 (MUST) Public compliance record.** In a public repository, the reference to these
+  requirements (GOV-03) and the filled-in checklists are published, so that compliance can be shown.
+  The public checklist gives the status of each requirement and links to public evidence only. It
+  MUST NOT contain: details of weaknesses that are not yet fixed (what is missing, where, or how it
+  could be used), vulnerability details before the fix is released (VUL-09), names of people other
+  than public maintainer handles, contact details other than the security contact, internal host
+  names or network details, names of secrets, account or key identifiers, or which customers,
+  programmes or organisations use the software. For a MUST that is not met, the public line says
+  only "exception recorded" and the target date; the exception itself (GOV-05) is kept in a private
+  record (for example a private repository, or the hosting platform's private security advisories)
+  and is shown to auditors on request. *Sources:* ISO 27001 A.5.12, A.5.14, A.8.12; ISO/IEC 29147.
 - **GOV-10 (MUST) No user or sector information in public repositories.** Public repositories,
   including documents, examples, test data, issue templates and agent instruction files, do not name
   customers, programmes, sectors or organisations that use the software, unless that user has agreed
@@ -118,9 +119,10 @@ apply as listed in the README.
   checkout (BLD-01). *Sources:* ISO 27001 A.8.4, A.8.9; SSDF PS.1.
 - **SRC-02 (MUST) Least-privilege repository access.** Access to the repository follows least
   privilege: write access only for people who need it, admin access for as few people as possible,
-  and access is removed when someone leaves the work. Access rights are reviewed at least once a
-  year. *Evidence:* access list and review date. *Sources:* ISO 27001 A.5.15, A.5.18, A.8.2, A.8.4;
-  OSPS Baseline (Access Control).
+  and access is removed when someone leaves the work. Where support for the application is offered
+  commercially, access rights are reviewed at least once a year; otherwise access is checked when
+  someone is given it or leaves the work. *Evidence:* access list and review date. *Sources:* ISO
+  27001 A.5.15, A.5.18, A.8.2, A.8.4; OSPS Baseline (Access Control).
 - **SRC-03 (MUST) Multi-factor authentication.** Every account with write access to the repository,
   the CI system or a package registry uses multi-factor authentication. *Evidence:* hosting platform
   setting. *Sources:* ISO 27001 A.8.5; OSPS Baseline (Access Control); SSDF PO.5.
@@ -171,10 +173,12 @@ apply as listed in the README.
   requests; branch protection settings. *Sources:* ISO 27001 A.8.32; SSDF PW.7; SLSA source track.
 - **SRC-13 (MUST) Repository backed up.** A copy of the repository, with its full history, branches
   and tags, is kept outside the hosting platform and updated at least monthly, and restoring it is
-  tried at least once a year. Issues, merge requests and their review records SHOULD be exported as
-  well. The copy is protected like the repository (SRC-02). *Evidence:* date of the last copy and of
-  the last restore test (where the copy is kept goes in the private record of a public repository,
-  GOV-09). *Sources:* ISO 27001 A.8.13; SSDF PS.1.
+  tried at least once a year. For an application maintained voluntarily, the copy is instead updated
+  before each release, and restoring it is tried before each major release. Issues, merge requests
+  and their review records SHOULD be exported as well. The copy is protected like the repository
+  (SRC-02). *Evidence:* date of the last copy and of the last restore test (where the copy is kept
+  goes in the private record of a public repository, GOV-09). *Sources:* ISO 27001 A.8.13; SSDF
+  PS.1.
 - **SRC-14 (MUST) Developer computers secured.** Computers used for the work, including those on
   which code agents run, have disk encryption on, get operating system and tool updates, lock the
   screen when unattended, and are signed in to the repository and registries only with accounts that
@@ -229,8 +233,10 @@ apply as listed in the README.
 
 - **DEP-01 (MUST) Trusted dependency sources.** Dependencies are obtained only from defined, trusted
   sources (for example the official package registry or an organisation's proxy repository), over
-  authenticated, encrypted connections. *Evidence:* repository configuration in the build.
-  *Sources:* ISO 27001 A.5.21; SSDF PO.3, PW.4; SLSA.
+  authenticated, encrypted connections, and an internal or private group name can never be supplied
+  by a public repository. Local repositories (for example a developer's local Maven repository) are
+  not used in release builds. *Evidence:* repository configuration in the build. *Sources:* ISO
+  27001 A.5.21; SSDF PO.3, PW.4; SLSA.
 - **DEP-02 (MUST) Pinned and verified dependencies.** Dependency versions are fixed (no version
   ranges, no "latest"), and the build verifies a checksum or signature of every downloaded artefact,
   using a lock file or a dependency verification file kept in the repository. This covers build
@@ -291,7 +297,9 @@ apply as listed in the README.
 - **BLD-04 (MUST) Least-privilege CI.** CI jobs run with the least privileges they need: tokens are
   read-only by default, write and publishing rights are given only to the release job, and secrets
   are not available to jobs started from untrusted contributions (for example merge requests from
-  forks). *Sources:* SSDF PO.5; OSPS Baseline (Build and Release).
+  forks). Values that others can set (branch names, tags, commit messages, merge request titles and
+  descriptions, author names) are quoted or validated before a pipeline uses them, and are never put
+  directly into a shell command. *Sources:* SSDF PO.5; OSPS Baseline (Build and Release).
 - **BLD-05 (MUST) Versioned, traceable releases.** Each release has a unique version number, and the
   release is traceable to the exact source commit it was built from (for example a signed tag).
   *Sources:* ISO 27001 A.8.32; SSDF PS.3; SLSA.
@@ -363,8 +371,10 @@ apply as listed in the README.
   build or the release process) is marked as such, its review checks it against the threat model,
   and it is also reviewed by a person before it is merged. *Sources:* ISO 27001 A.8.32; SSDF PW.2.
 - **CHG-03 (MUST) Emergency changes reviewed afterwards.** Emergency changes (for example an urgent
-  security fix) MAY skip waiting for the usual review, but are reviewed afterwards within five
-  working days, and the reason is recorded. *Sources:* ISO 27001 A.8.32.
+  security fix) MAY be merged once the automated checks and the review check (SRC-12) have passed,
+  before the person review that CHG-02 asks for. The person review follows before the next release,
+  or within five working days where support for the application is offered commercially, and the
+  reason is recorded. *Sources:* ISO 27001 A.8.32.
 
 ### Vulnerability Management and Incidents (VUL)
 

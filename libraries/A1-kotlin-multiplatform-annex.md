@@ -1,6 +1,6 @@
 # A1 Kotlin and Gradle Annex
 
-Part of the Secure Development Requirements for Libraries, version 0.8 (draft), 2026-11-26. Read the
+Part of the Secure Development Requirements for Libraries, version 0.9 (draft), 2026-11-27. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Scope
@@ -46,8 +46,8 @@ Where one is not followed, the requirement still has to be met another way.
   dependencies and the npm dependencies of JS and wasm targets (for example OSV-Scanner on the
   Gradle and npm lock files, or the OWASP Dependency-Check Gradle plug-in). *Implements:* DEP-05.
 - **KMP-08 SBOM covers all targets.** The SBOM is produced by the build (for example with the
-  CycloneDX Gradle plug-in) and includes the npm dependencies of JS and wasm targets and, for
-  applications, the bundled Java runtime. *Implements:* DEP-09.
+  CycloneDX Gradle plug-in) and includes the npm dependencies of JS and wasm targets.
+  *Implements:* DEP-09.
 - **KMP-12 No secrets in Gradle files.** Credentials are not put in `gradle.properties`,
   `local.properties`, build scripts or start scripts in the repository. In CI they come from the CI
   system's protected secrets (for example as `ORG_GRADLE_PROJECT_` environment variables set by the

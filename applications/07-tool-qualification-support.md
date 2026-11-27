@@ -1,14 +1,15 @@
 # 07 Tool Qualification Support
 
-Part of the Secure Development Requirements for Applications, version 0.7 (draft), 2026-11-26. Read
+Part of the Secure Development Requirements for Applications, version 0.8 (draft), 2026-11-27. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
 ## Scope
 
 Applies when the software is not itself safety-related, but may be used to develop, verify or
-document systems that are safety-related. This covers engineering tools, and libraries that such
-tools are built from, where the developer does not know every use.
+document systems that are safety-related. This covers engineering tools where the developer
+does not know every use. Libraries that such tools are built from follow the set for libraries,
+which has no tool qualification document (its README, section 1).
 
 Safety standards do not make the tool developer responsible for qualifying the tool. They make the
 **user** of the tool responsible for deciding how much confidence the tool needs for their use, and

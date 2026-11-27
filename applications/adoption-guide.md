@@ -1,6 +1,6 @@
 # Adoption Guide for Existing Repositories
 
-Part of the Secure Development Requirements for Applications, version 0.7 (draft), 2026-11-26. Read
+Part of the Secure Development Requirements for Applications, version 0.8 (draft), 2026-11-27. Read
 the [README](README.md) first: it gives the wording rules, the working model, the terms and the
 sources.
 
@@ -11,7 +11,9 @@ an existing repository into line in stages, without stopping other work, and in 
 agent can carry out. A repository that follows this guide is compliant from the first stage: every
 requirement it does not yet meet has a recorded exception with a plan and a date (GOV-05).
 
-New repositories start at stage 4: they meet the requirements from the first commit.
+New repositories do step 1 of stage 1 (which documents apply, recorded under GOV-03), and from then
+on work as in stage 3: they meet the requirements from the first commit. They need no baselines and
+no catch-up work.
 
 ## Stage 1: Gap Assessment
 
@@ -83,8 +85,9 @@ From this stage, every new change meets the requirements, while existing problem
   approval as an exception. Where a compiler has no baseline file (for example the Kotlin compiler,
   KMP-10), warnings as errors is turned on module by module, and the list of modules not yet
   switched is the baseline; it may only shrink.
-- **Dependency vulnerabilities** already known are triaged at once and get fix dates under VUL-04,
-  counted from the day of the assessment.
+- **Dependency vulnerabilities** already known are triaged at once. Where VUL-04 applies they get
+  fix dates under it, counted from the day of the assessment; otherwise they are fixed on a
+  best-effort basis (VUL-10).
 - **Changed code is brought up to standard.** When a change touches a file, findings in the code it
   changes are fixed in the same change or have an issue; tests are added for the behaviour it
   changes (QCR-03).

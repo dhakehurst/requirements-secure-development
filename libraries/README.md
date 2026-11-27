@@ -1,6 +1,6 @@
 # Secure Development Requirements for Libraries
 
-Version 0.8 (draft), 2026-11-26
+Version 0.9 (draft), 2026-11-27
 
 ## 1. Purpose
 
@@ -12,6 +12,13 @@ product or the organisation.
 It is for repositories that publish a library, package, plug-in or other component that other
 software builds on, and that are maintained voluntarily, however many people take part, with most of
 the work done by code agents. Applications use the separate set for applications.
+
+A library that is used only by its owner's own applications and libraries MAY be kept private (a
+**private library**). For a private library, LIB-12 to LIB-17 and the open source licence of DEP-08
+do not apply (marked "n/a: private library" in the checklist), it is published only to a private
+registry that the owner controls (LIB-01), and it does not claim OSPS Baseline Level 1 (section 8).
+All other requirements apply. A public library depends only on publicly available components, so
+that anyone can build it and its tests can run on every contribution.
 
 The set has two kinds of content:
 
@@ -70,12 +77,12 @@ across versions: a requirement that is removed keeps its id unused.
 
 ## 5. Public Repositories
 
-The requirements and each repository's filled-in checklist are meant to be published in the
-repository, so that anyone can see that it complies. Publishing them must not weaken the security it
-shows (GOV-09, GOV-10, VUL-09, AGT-18):
+Each repository's reference to this set (GOV-03) and its filled-in checklist are meant to be
+published in the repository, so that anyone can see that it complies. Publishing them must not
+weaken the security it shows (GOV-09, GOV-10, VUL-09, AGT-18):
 
-- **Public**: the requirements, the status of each, links to public evidence (CI results, published
-  SBOMs, signatures, `SECURITY.md`), target dates for open items.
+- **Public**: the reference to the set, the status of each requirement, links to public evidence (CI
+  results, published SBOMs, signatures, `SECURITY.md`), target dates for open items.
 - **Private**: reasons and plans for open items, vulnerabilities before their fix is released, names
   and contacts of people beyond public handles, internal systems, and who uses the software.
 - **Not named in public**: customers, programmes, sectors or organisations that use the software.
@@ -122,7 +129,7 @@ controls for software development; they do not replace an organisation's own pol
 
 ## 8. OSPS Baseline Level 1
 
-A library that meets document 01 meets all 24 controls of Level 1 of the OpenSSF Open Source
+A public library that meets document 01 meets all 24 controls of Level 1 of the OpenSSF Open Source
 Project Security Baseline (OSPS Baseline), version 2026.08.28. Its checklist MAY say so, for example
 "Meets OSPS Baseline 2026.08.28 Level 1". The table gives, for each control, the requirement that
 covers it. The control texts are short paraphrases; the OSPS Baseline itself is the authority.

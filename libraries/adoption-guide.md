@@ -1,6 +1,6 @@
 # Adoption Guide for Library Repositories
 
-Part of the Secure Development Requirements for Libraries, version 0.8 (draft), 2026-11-26. Read the
+Part of the Secure Development Requirements for Libraries, version 0.9 (draft), 2026-11-27. Read the
 [README](README.md) first: it gives the wording rules, the working model, the terms and the sources.
 
 ## Purpose
@@ -36,7 +36,8 @@ repository's and the account's settings pages.
 3. Private vulnerability reporting turned on (VUL-01).
 4. Secret scanning and push protection turned on where the platform offers them (SRC-08). On GitHub
    they are free for public repositories.
-5. CI token permissions read-only by default (BLD-04).
+5. CI token permissions read-only by default (BLD-04). Repository public, unless it is a private
+   library (LIB-12).
 6. Signing key created and stored only in the CI system's protected secrets; publishing credentials
    scoped to this library in CI secrets, or trusted publishing set up (BLD-06, LIB-01).
 7. Agent environment without publishing or signing credentials (AGT-03).
@@ -72,6 +73,14 @@ first so that the later changes are checked.
   section 1).
 - The checklist, with the set's version (GOV-03), and the OSPS Baseline Level 1 claim (README,
   section 8).
+- Existing findings of static analysis, linters and compiler warnings are recorded in a baseline
+  file committed to the repository, so that CI fails only on new findings. The baseline may only
+  shrink: a change that adds entries says why in the merge request, and the review checks it
+  (AGT-06). Where a compiler has no baseline file (for example the Kotlin compiler, KMP-10),
+  warnings as errors is turned on module by module, and the list of modules not yet switched is the
+  baseline.
+
+When the CI checks exist, the person does item 10 of step 2 (branch protection).
 
 The guidance of document 02 is not part of the adoption: agents apply it to every change from now
 on, and improve existing code when they work on it.
@@ -115,7 +124,7 @@ Do step 1 of the adoption guide (gap assessment) only:
 Change no code or settings, and post nothing public. Give me the checklist and both lists here.
 ```
 
-Step 3, after the person has done the settings of step 2:
+Step 3, after the person has done items 1 to 9 of step 2:
 
 ```text
 Do step 3 of the adoption guide: one reviewed merge request per item, the CI checks first.
